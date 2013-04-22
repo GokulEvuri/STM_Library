@@ -1,0 +1,2 @@
+/home/snake/2013-mini-smart-vehicles/group-4/sources/STM32F4/host-tools/build/qstlink2/CMakeFiles/install-udev.dir
+/home/snake/2013-mini-smart-vehicles/group-4/sources/STM32F4/host-tools/build/qstlink2/CMakeFiles/qstlink2.dir

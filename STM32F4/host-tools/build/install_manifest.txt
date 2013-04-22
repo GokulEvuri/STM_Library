@@ -1,0 +1,2 @@
+/opt/msv/group-4/bin/qstlink2
+/opt/msv/group-4/bin/devices.xml

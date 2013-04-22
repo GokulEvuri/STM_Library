@@ -13,14 +13,7 @@
 #include "USB/USB.h"
 #include "Misc/Misc.h"
 #include "SPI/SPI.h"
-
-
-
-void print( BaseSequentialStream *chp, int argc, char *argv[]){
-   
-   chprintf(chp,"Hello World");
-}
-
+#include "msv/include/ir_protocol.h"
 
 /*
  * assert Shell Commands to functions

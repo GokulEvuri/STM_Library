@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc830ErU.s 			page 1
+ARM GAS  /tmp/ccjtntmA.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
   55              		@ args = 0, pretend = 0, frame = 0
   56              		@ frame_needed = 0, uses_anonymous_args = 0
   57              	.LVL2:
-ARM GAS  /tmp/cc830ErU.s 			page 2
+ARM GAS  /tmp/ccjtntmA.s 			page 2
 
 
   58              		.loc 1 102 0
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  112 0040 2B68     		ldr	r3, [r5, #0]
  113              		.loc 1 111 0 discriminator 2
  114 0042 3D21     		movs	r1, #61
-ARM GAS  /tmp/cc830ErU.s 			page 3
+ARM GAS  /tmp/ccjtntmA.s 			page 3
 
 
  115 0044 01FA00F1 		lsl	r1, r1, r0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  169 0080 2270     		strb	r2, [r4, #0]
  170 0082 EAE7     		b	.L10
  171              	.LVL14:
-ARM GAS  /tmp/cc830ErU.s 			page 4
+ARM GAS  /tmp/ccjtntmA.s 			page 4
 
 
  172              	.L20:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  225              		.loc 1 160 0
  226 002e 1622     		movs	r2, #22
  227              		.loc 1 166 0
-ARM GAS  /tmp/cc830ErU.s 			page 5
+ARM GAS  /tmp/ccjtntmA.s 			page 5
 
 
  228 0030 4623     		movs	r3, #70
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  282 0086 FFF7FEFF 		bl	spiObjectInit
  283              	.LVL18:
  284              		.loc 1 194 0
-ARM GAS  /tmp/cc830ErU.s 			page 6
+ARM GAS  /tmp/ccjtntmA.s 			page 6
 
 
  285 008a 40F20000 		movw	r0, #:lower16:_stm32_dma_streams
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  337 0008 27D0     		beq	.L56
  338 000a C369     		ldr	r3, [r0, #28]
  339              	.LVL20:
-ARM GAS  /tmp/cc830ErU.s 			page 7
+ARM GAS  /tmp/ccjtntmA.s 			page 7
 
 
  340              	.L25:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  394 0058 EAE7     		b	.L36
  395              	.LVL21:
  396              	.L56:
-ARM GAS  /tmp/cc830ErU.s 			page 8
+ARM GAS  /tmp/ccjtntmA.s 			page 8
 
 
  397              		.loc 1 222 0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  451 009e 3ED1     		bne	.L62
  452              	.LVL28:
  453              	.L28:
-ARM GAS  /tmp/cc830ErU.s 			page 9
+ARM GAS  /tmp/ccjtntmA.s 			page 9
 
 
  454              		.loc 1 234 0
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  508 00ec 18BB     		cbnz	r0, .L65
  509              	.LVL38:
  510              	.L33:
-ARM GAS  /tmp/cc830ErU.s 			page 10
+ARM GAS  /tmp/ccjtntmA.s 			page 10
 
 
  511              		.loc 1 261 0
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  565              	.LVL53:
  566              	.L66:
  567              	.LBE9:
-ARM GAS  /tmp/cc830ErU.s 			page 11
+ARM GAS  /tmp/ccjtntmA.s 			page 11
 
 
  568              	.LBB10:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  622              		.cfi_offset 4, -8
  623              		.cfi_offset 14, -4
  624              		.loc 1 310 0
-ARM GAS  /tmp/cc830ErU.s 			page 12
+ARM GAS  /tmp/ccjtntmA.s 			page 12
 
 
  625 0006 0446     		mov	r4, r0
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  679 005c 596C     		ldr	r1, [r3, #68]
  680 005e 21F48050 		bic	r0, r1, #4096
  681 0062 5864     		str	r0, [r3, #68]
-ARM GAS  /tmp/cc830ErU.s 			page 13
+ARM GAS  /tmp/ccjtntmA.s 			page 13
 
 
  682 0064 10BD     		pop	{r4, pc}
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  731              		@ args = 0, pretend = 0, frame = 0
  732              		@ frame_needed = 0, uses_anonymous_args = 0
  733              		@ link register save eliminated.
-ARM GAS  /tmp/cc830ErU.s 			page 14
+ARM GAS  /tmp/ccjtntmA.s 			page 14
 
 
  734              	.LVL67:
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  785 0012 40F20000 		movw	r0, #:lower16:.LANCHOR0
  786              	.LVL70:
  787 0016 C0F20000 		movt	r0, #:upper16:.LANCHOR0
-ARM GAS  /tmp/cc830ErU.s 			page 15
+ARM GAS  /tmp/ccjtntmA.s 			page 15
 
 
  788              		.loc 1 373 0
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  842 0004 476A     		ldr	r7, [r0, #36]
  843              		.loc 1 405 0
  844 0006 866A     		ldr	r6, [r0, #40]
-ARM GAS  /tmp/cc830ErU.s 			page 16
+ARM GAS  /tmp/ccjtntmA.s 			page 16
 
 
  845              		.loc 1 409 0
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  897              		@ frame_needed = 0, uses_anonymous_args = 0
  898              		@ link register save eliminated.
  899              	.LVL78:
-ARM GAS  /tmp/cc830ErU.s 			page 17
+ARM GAS  /tmp/ccjtntmA.s 			page 17
 
 
  900 0000 F0B4     		push	{r4, r5, r6, r7}
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  953      0080
  954              		.align	2
  955              		.p2align 4,,15
-ARM GAS  /tmp/cc830ErU.s 			page 18
+ARM GAS  /tmp/ccjtntmA.s 			page 18
 
 
  956              		.global	spi_lld_receive
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1010 002c 2160     		str	r1, [r4, #0]
  1011              		.loc 1 466 0
  1012 002e 1868     		ldr	r0, [r3, #0]
-ARM GAS  /tmp/cc830ErU.s 			page 19
+ARM GAS  /tmp/ccjtntmA.s 			page 19
 
 
  1013 0030 40F00102 		orr	r2, r0, #1
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1066              		.type	SPID1, %object
  1067              		.size	SPID1, 48
  1068              	SPID1:
-ARM GAS  /tmp/cc830ErU.s 			page 20
+ARM GAS  /tmp/ccjtntmA.s 			page 20
 
 
  1069 0000 00000000 		.space	48
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1095 0050 7370695F 		.ascii	"spi_lld_start(), #5\000"
  1095      6C6C645F 
  1095      73746172 
-ARM GAS  /tmp/cc830ErU.s 			page 21
+ARM GAS  /tmp/ccjtntmA.s 			page 21
 
 
  1095      7428292C 
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1144 0033 37000000 		.4byte	0x37
  1145 0037 04       		.uleb128 0x4
  1146 0038 04       		.byte	0x4
-ARM GAS  /tmp/cc830ErU.s 			page 22
+ARM GAS  /tmp/ccjtntmA.s 			page 22
 
 
  1147 0039 07       		.byte	0x7
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1201 00a2 A6000000 		.4byte	0xa6
  1202 00a6 04       		.uleb128 0x4
  1203 00a7 08       		.byte	0x8
-ARM GAS  /tmp/cc830ErU.s 			page 23
+ARM GAS  /tmp/ccjtntmA.s 			page 23
 
 
  1204 00a8 07       		.byte	0x7
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1258 0120 4C       		.byte	0x4c
  1259 0121 06       		.byte	0x6
  1260 0122 57       		.byte	0x57
-ARM GAS  /tmp/cc830ErU.s 			page 24
+ARM GAS  /tmp/ccjtntmA.s 			page 24
 
 
  1261 0123 4E020000 		.4byte	0x24e
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1315 0186 02       		.byte	0x2
  1316 0187 23       		.byte	0x23
  1317 0188 18       		.uleb128 0x18
-ARM GAS  /tmp/cc830ErU.s 			page 25
+ARM GAS  /tmp/ccjtntmA.s 			page 25
 
 
  1318 0189 06       		.uleb128 0x6
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1372 01e9 23       		.byte	0x23
  1373 01ea 28       		.uleb128 0x28
  1374 01eb 06       		.uleb128 0x6
-ARM GAS  /tmp/cc830ErU.s 			page 26
+ARM GAS  /tmp/ccjtntmA.s 			page 26
 
 
  1375 01ec 19070000 		.4byte	.LASF38
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1429 024c 48       		.uleb128 0x48
  1430 024d 00       		.byte	0
  1431 024e 08       		.uleb128 0x8
-ARM GAS  /tmp/cc830ErU.s 			page 27
+ARM GAS  /tmp/ccjtntmA.s 			page 27
 
 
  1432 024f 08       		.byte	0x8
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1486 02b2 04       		.byte	0x4
  1487 02b3 03       		.uleb128 0x3
  1488 02b4 F9020000 		.4byte	.LASF48
-ARM GAS  /tmp/cc830ErU.s 			page 28
+ARM GAS  /tmp/ccjtntmA.s 			page 28
 
 
  1489 02b8 07       		.byte	0x7
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1543 031c 02       		.byte	0x2
  1544 031d 23       		.byte	0x23
  1545 031e 14       		.uleb128 0x14
-ARM GAS  /tmp/cc830ErU.s 			page 29
+ARM GAS  /tmp/ccjtntmA.s 			page 29
 
 
  1546 031f 0C       		.uleb128 0xc
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1600 0386 08       		.byte	0x8
  1601 0387 25       		.byte	0x25
  1602 0388 B7030000 		.4byte	0x3b7
-ARM GAS  /tmp/cc830ErU.s 			page 30
+ARM GAS  /tmp/ccjtntmA.s 			page 30
 
 
  1603 038c 06       		.uleb128 0x6
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1657 03f2 F3040000 		.4byte	.LASF59
  1658 03f6 06       		.byte	0x6
  1659 03f7 AB       		.byte	0xab
-ARM GAS  /tmp/cc830ErU.s 			page 31
+ARM GAS  /tmp/ccjtntmA.s 			page 31
 
 
  1660 03f8 FA000000 		.4byte	0xfa
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1714 0467 02       		.byte	0x2
  1715 0468 23       		.byte	0x23
  1716 0469 08       		.uleb128 0x8
-ARM GAS  /tmp/cc830ErU.s 			page 32
+ARM GAS  /tmp/ccjtntmA.s 			page 32
 
 
  1717 046a 14       		.uleb128 0x14
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1771 04d0 DF02     		.2byte	0x2df
  1772 04d2 6F030000 		.4byte	0x36f
  1773 04d6 02       		.byte	0x2
-ARM GAS  /tmp/cc830ErU.s 			page 33
+ARM GAS  /tmp/ccjtntmA.s 			page 33
 
 
  1774 04d7 23       		.byte	0x23
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1828 053b 6F030000 		.4byte	0x36f
  1829 053f 02       		.byte	0x2
  1830 0540 23       		.byte	0x23
-ARM GAS  /tmp/cc830ErU.s 			page 34
+ARM GAS  /tmp/ccjtntmA.s 			page 34
 
 
  1831 0541 24       		.uleb128 0x24
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1885 05a8 02       		.byte	0x2
  1886 05a9 23       		.byte	0x23
  1887 05aa 44       		.uleb128 0x44
-ARM GAS  /tmp/cc830ErU.s 			page 35
+ARM GAS  /tmp/ccjtntmA.s 			page 35
 
 
  1888 05ab 14       		.uleb128 0x14
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1942 0612 23       		.byte	0x23
  1943 0613 64       		.uleb128 0x64
  1944 0614 14       		.uleb128 0x14
-ARM GAS  /tmp/cc830ErU.s 			page 36
+ARM GAS  /tmp/ccjtntmA.s 			page 36
 
 
  1945 0615 2A050000 		.4byte	.LASF87
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  1999 067e 24       		.byte	0x24
  2000 067f 09       		.byte	0x9
  2001 0680 4D03     		.2byte	0x34d
-ARM GAS  /tmp/cc830ErU.s 			page 37
+ARM GAS  /tmp/ccjtntmA.s 			page 37
 
 
  2002 0682 93070000 		.4byte	0x793
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2056 06ea 02       		.byte	0x2
  2057 06eb 23       		.byte	0x23
  2058 06ec 0C       		.uleb128 0xc
-ARM GAS  /tmp/cc830ErU.s 			page 38
+ARM GAS  /tmp/ccjtntmA.s 			page 38
 
 
  2059 06ed 14       		.uleb128 0x14
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2113 0754 23       		.byte	0x23
  2114 0755 1A       		.uleb128 0x1a
  2115 0756 14       		.uleb128 0x14
-ARM GAS  /tmp/cc830ErU.s 			page 39
+ARM GAS  /tmp/ccjtntmA.s 			page 39
 
 
  2116 0757 05010000 		.4byte	.LASF96
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2170 07bc F4070000 		.4byte	0x7f4
  2171 07c0 02       		.byte	0x2
  2172 07c1 23       		.byte	0x23
-ARM GAS  /tmp/cc830ErU.s 			page 40
+ARM GAS  /tmp/ccjtntmA.s 			page 40
 
 
  2173 07c2 04       		.uleb128 0x4
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2227 0828 04       		.byte	0x4
  2228 0829 0B       		.byte	0xb
  2229 082a 96       		.byte	0x96
-ARM GAS  /tmp/cc830ErU.s 			page 41
+ARM GAS  /tmp/ccjtntmA.s 			page 41
 
 
  2230 082b 4C080000 		.4byte	0x84c
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2284 088a 04       		.uleb128 0x4
  2285 088b 06       		.uleb128 0x6
  2286 088c DD010000 		.4byte	.LASF111
-ARM GAS  /tmp/cc830ErU.s 			page 42
+ARM GAS  /tmp/ccjtntmA.s 			page 42
 
 
  2287 0890 0B       		.byte	0xb
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2341 08ed 06       		.uleb128 0x6
  2342 08ee B3030000 		.4byte	.LASF116
  2343 08f2 0B       		.byte	0xb
-ARM GAS  /tmp/cc830ErU.s 			page 43
+ARM GAS  /tmp/ccjtntmA.s 			page 43
 
 
  2344 08f3 9D       		.byte	0x9d
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2398 095f 0C       		.byte	0xc
  2399 0960 54       		.byte	0x54
  2400 0961 33090000 		.4byte	0x933
-ARM GAS  /tmp/cc830ErU.s 			page 44
+ARM GAS  /tmp/ccjtntmA.s 			page 44
 
 
  2401 0965 15       		.uleb128 0x15
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2455 09cf 6F01     		.2byte	0x16f
  2456 09d1 28090000 		.4byte	0x928
  2457 09d5 02       		.byte	0x2
-ARM GAS  /tmp/cc830ErU.s 			page 45
+ARM GAS  /tmp/ccjtntmA.s 			page 45
 
 
  2458 09d6 23       		.byte	0x23
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2512 0a3f 02       		.byte	0x2
  2513 0a40 23       		.byte	0x23
  2514 0a41 00       		.uleb128 0
-ARM GAS  /tmp/cc830ErU.s 			page 46
+ARM GAS  /tmp/ccjtntmA.s 			page 46
 
 
  2515 0a42 14       		.uleb128 0x14
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2569 0aac 240A0000 		.4byte	0xa24
  2570 0ab0 00000000 		.4byte	.LLST0
  2571 0ab4 1C       		.uleb128 0x1c
-ARM GAS  /tmp/cc830ErU.s 			page 47
+ARM GAS  /tmp/ccjtntmA.s 			page 47
 
 
  2572 0ab5 82060000 		.4byte	.LASF141
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2626 0b3e 76000000 		.4byte	.LBB4
  2627 0b42 7E000000 		.4byte	.LBE4
  2628 0b46 5A0B0000 		.4byte	0xb5a
-ARM GAS  /tmp/cc830ErU.s 			page 48
+ARM GAS  /tmp/ccjtntmA.s 			page 48
 
 
  2629 0b4a 20       		.uleb128 0x20
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2683 0bc2 23       		.uleb128 0x23
  2684 0bc3 01       		.byte	0x1
  2685 0bc4 50       		.byte	0x50
-ARM GAS  /tmp/cc830ErU.s 			page 49
+ARM GAS  /tmp/ccjtntmA.s 			page 49
 
 
  2686 0bc5 02       		.byte	0x2
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2740 0c32 78100000 		.4byte	0x1078
  2741 0c36 4F0C0000 		.4byte	0xc4f
  2742 0c3a 23       		.uleb128 0x23
-ARM GAS  /tmp/cc830ErU.s 			page 50
+ARM GAS  /tmp/ccjtntmA.s 			page 50
 
 
  2743 0c3b 01       		.byte	0x1
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2797 0c92 01       		.byte	0x1
  2798 0c93 50       		.byte	0x50
  2799 0c94 05       		.byte	0x5
-ARM GAS  /tmp/cc830ErU.s 			page 51
+ARM GAS  /tmp/ccjtntmA.s 			page 51
 
 
  2800 0c95 03       		.byte	0x3
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2854 0cf3 01       		.byte	0x1
  2855 0cf4 3A       		.byte	0x3a
  2856 0cf5 00       		.byte	0
-ARM GAS  /tmp/cc830ErU.s 			page 52
+ARM GAS  /tmp/ccjtntmA.s 			page 52
 
 
  2857 0cf6 22       		.uleb128 0x22
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2911 0d5a 78100000 		.4byte	0x1078
  2912 0d5e 770D0000 		.4byte	0xd77
  2913 0d62 23       		.uleb128 0x23
-ARM GAS  /tmp/cc830ErU.s 			page 53
+ARM GAS  /tmp/ccjtntmA.s 			page 53
 
 
  2914 0d63 01       		.byte	0x1
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  2968 0dc4 3601     		.2byte	0x136
  2969 0dc6 240A0000 		.4byte	0xa24
  2970 0dca 7B020000 		.4byte	.LLST15
-ARM GAS  /tmp/cc830ErU.s 			page 54
+ARM GAS  /tmp/ccjtntmA.s 			page 54
 
 
  2971 0dce 21       		.uleb128 0x21
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3025 0e45 3E000000 		.4byte	.LFE125
  3026 0e49 F1020000 		.4byte	.LLST18
  3027 0e4d 01       		.byte	0x1
-ARM GAS  /tmp/cc830ErU.s 			page 55
+ARM GAS  /tmp/ccjtntmA.s 			page 55
 
 
  3028 0e4e 710E0000 		.4byte	0xe71
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3082 0ed2 29       		.uleb128 0x29
  3083 0ed3 01       		.byte	0x1
  3084 0ed4 18020000 		.4byte	.LASF153
-ARM GAS  /tmp/cc830ErU.s 			page 56
+ARM GAS  /tmp/ccjtntmA.s 			page 56
 
 
  3085 0ed8 01       		.byte	0x1
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3139 0f5d B1020000 		.4byte	0x2b1
  3140 0f61 E1040000 		.4byte	.LLST33
  3141 0f65 00       		.byte	0
-ARM GAS  /tmp/cc830ErU.s 			page 57
+ARM GAS  /tmp/ccjtntmA.s 			page 57
 
 
  3142 0f66 2E       		.uleb128 0x2e
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3196 0fdc 12       		.uleb128 0x12
  3197 0fdd 74030000 		.4byte	0x374
  3198 0fe1 0F       		.byte	0xf
-ARM GAS  /tmp/cc830ErU.s 			page 58
+ARM GAS  /tmp/ccjtntmA.s 			page 58
 
 
  3199 0fe2 00       		.byte	0
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3253 1047 10       		.byte	0x10
  3254 1048 89       		.byte	0x89
  3255 1049 01       		.byte	0x1
-ARM GAS  /tmp/cc830ErU.s 			page 59
+ARM GAS  /tmp/ccjtntmA.s 			page 59
 
 
  3256 104a 73020000 		.4byte	0x273
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3310 10b5 01       		.byte	0x1
  3311 10b6 75050000 		.4byte	.LASF173
  3312 10ba 0A       		.byte	0xa
-ARM GAS  /tmp/cc830ErU.s 			page 60
+ARM GAS  /tmp/ccjtntmA.s 			page 60
 
 
  3313 10bb C601     		.2byte	0x1c6
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3367 002d 00       		.byte	0
  3368 002e 0B       		.uleb128 0xb
  3369 002f 0B       		.uleb128 0xb
-ARM GAS  /tmp/cc830ErU.s 			page 61
+ARM GAS  /tmp/ccjtntmA.s 			page 61
 
 
  3370 0030 3E       		.uleb128 0x3e
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3424 0066 0B       		.uleb128 0xb
  3425 0067 0B       		.uleb128 0xb
  3426 0068 3A       		.uleb128 0x3a
-ARM GAS  /tmp/cc830ErU.s 			page 62
+ARM GAS  /tmp/ccjtntmA.s 			page 62
 
 
  3427 0069 0B       		.uleb128 0xb
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3481 009f 35       		.uleb128 0x35
  3482 00a0 00       		.byte	0
  3483 00a1 49       		.uleb128 0x49
-ARM GAS  /tmp/cc830ErU.s 			page 63
+ARM GAS  /tmp/ccjtntmA.s 			page 63
 
 
  3484 00a2 13       		.uleb128 0x13
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3538 00d8 13       		.uleb128 0x13
  3539 00d9 13       		.uleb128 0x13
  3540 00da 01       		.byte	0x1
-ARM GAS  /tmp/cc830ErU.s 			page 64
+ARM GAS  /tmp/ccjtntmA.s 			page 64
 
 
  3541 00db 0B       		.uleb128 0xb
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3595 0111 18       		.uleb128 0x18
  3596 0112 0D       		.uleb128 0xd
  3597 0113 00       		.byte	0
-ARM GAS  /tmp/cc830ErU.s 			page 65
+ARM GAS  /tmp/ccjtntmA.s 			page 65
 
 
  3598 0114 03       		.uleb128 0x3
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3652 014b 00       		.byte	0
  3653 014c 1C       		.uleb128 0x1c
  3654 014d 05       		.uleb128 0x5
-ARM GAS  /tmp/cc830ErU.s 			page 66
+ARM GAS  /tmp/ccjtntmA.s 			page 66
 
 
  3655 014e 00       		.byte	0
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3709 0188 01       		.uleb128 0x1
  3710 0189 13       		.uleb128 0x13
  3711 018a 00       		.byte	0
-ARM GAS  /tmp/cc830ErU.s 			page 67
+ARM GAS  /tmp/ccjtntmA.s 			page 67
 
 
  3712 018b 00       		.byte	0
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3766 01ca 25       		.uleb128 0x25
  3767 01cb 2E       		.uleb128 0x2e
  3768 01cc 01       		.byte	0x1
-ARM GAS  /tmp/cc830ErU.s 			page 68
+ARM GAS  /tmp/ccjtntmA.s 			page 68
 
 
  3769 01cd 3F       		.uleb128 0x3f
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3823 0206 3A       		.uleb128 0x3a
  3824 0207 0B       		.uleb128 0xb
  3825 0208 3B       		.uleb128 0x3b
-ARM GAS  /tmp/cc830ErU.s 			page 69
+ARM GAS  /tmp/ccjtntmA.s 			page 69
 
 
  3826 0209 05       		.uleb128 0x5
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3880 0241 00       		.byte	0
  3881 0242 2C       		.uleb128 0x2c
  3882 0243 05       		.uleb128 0x5
-ARM GAS  /tmp/cc830ErU.s 			page 70
+ARM GAS  /tmp/ccjtntmA.s 			page 70
 
 
  3883 0244 00       		.byte	0
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3937 027b 49       		.uleb128 0x49
  3938 027c 13       		.uleb128 0x13
  3939 027d 02       		.uleb128 0x2
-ARM GAS  /tmp/cc830ErU.s 			page 71
+ARM GAS  /tmp/ccjtntmA.s 			page 71
 
 
  3940 027e 0A       		.uleb128 0xa
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  3994 02b4 00       		.byte	0
  3995 02b5 3F       		.uleb128 0x3f
  3996 02b6 0C       		.uleb128 0xc
-ARM GAS  /tmp/cc830ErU.s 			page 72
+ARM GAS  /tmp/ccjtntmA.s 			page 72
 
 
  3997 02b7 03       		.uleb128 0x3
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4051 02ed 0C       		.uleb128 0xc
  4052 02ee 03       		.uleb128 0x3
  4053 02ef 0E       		.uleb128 0xe
-ARM GAS  /tmp/cc830ErU.s 			page 73
+ARM GAS  /tmp/ccjtntmA.s 			page 73
 
 
  4054 02f0 3A       		.uleb128 0x3a
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4108 0326 01       		.byte	0x1
  4109 0327 3F       		.uleb128 0x3f
  4110 0328 0C       		.uleb128 0xc
-ARM GAS  /tmp/cc830ErU.s 			page 74
+ARM GAS  /tmp/ccjtntmA.s 			page 74
 
 
  4111 0329 03       		.uleb128 0x3
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4165 005a 00000000 		.4byte	0
  4166 005e 00000000 		.4byte	0
  4167              	.LLST3:
-ARM GAS  /tmp/cc830ErU.s 			page 75
+ARM GAS  /tmp/ccjtntmA.s 			page 75
 
 
  4168 0062 00000000 		.4byte	.LVL2
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4222 00ed 53       		.byte	0x53
  4223 00ee 00000000 		.4byte	0
  4224 00f2 00000000 		.4byte	0
-ARM GAS  /tmp/cc830ErU.s 			page 76
+ARM GAS  /tmp/ccjtntmA.s 			page 76
 
 
  4225              	.LLST7:
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4279 0180 82000000 		.4byte	.LVL24
  4280 0184 B2000000 		.4byte	.LVL29
  4281 0188 0100     		.2byte	0x1
-ARM GAS  /tmp/cc830ErU.s 			page 77
+ARM GAS  /tmp/ccjtntmA.s 			page 77
 
 
  4282 018a 54       		.byte	0x54
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4336 021e 50       		.byte	0x50
  4337 021f 00000000 		.4byte	0
  4338 0223 00000000 		.4byte	0
-ARM GAS  /tmp/cc830ErU.s 			page 78
+ARM GAS  /tmp/ccjtntmA.s 			page 78
 
 
  4339              	.LLST13:
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4393 02b7 0100     		.2byte	0x1
  4394 02b9 50       		.byte	0x50
  4395 02ba 06000000 		.4byte	.LVL66
-ARM GAS  /tmp/cc830ErU.s 			page 79
+ARM GAS  /tmp/ccjtntmA.s 			page 79
 
 
  4396 02be 12000000 		.4byte	.LFE123
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4450 033d 2C000000 		.4byte	.LVL71
  4451 0341 34000000 		.4byte	.LVL72
  4452 0345 0200     		.2byte	0x2
-ARM GAS  /tmp/cc830ErU.s 			page 80
+ARM GAS  /tmp/ccjtntmA.s 			page 80
 
 
  4453 0347 72       		.byte	0x72
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4507 03c0 00000000 		.4byte	0
  4508              	.LLST24:
  4509 03c4 00000000 		.4byte	.LVL73
-ARM GAS  /tmp/cc830ErU.s 			page 81
+ARM GAS  /tmp/ccjtntmA.s 			page 81
 
 
  4510 03c8 2C000000 		.4byte	.LVL77
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4564 044e 2C000000 		.4byte	.LVL81
  4565 0452 3A000000 		.4byte	.LFE127
  4566 0456 0200     		.2byte	0x2
-ARM GAS  /tmp/cc830ErU.s 			page 82
+ARM GAS  /tmp/ccjtntmA.s 			page 82
 
 
  4567 0458 74       		.byte	0x74
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4621 04dd 00000000 		.4byte	0
  4622              	.LLST33:
  4623 04e1 00000000 		.4byte	.LVL82
-ARM GAS  /tmp/cc830ErU.s 			page 83
+ARM GAS  /tmp/ccjtntmA.s 			page 83
 
 
  4624 04e5 28000000 		.4byte	.LVL84
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4678 0068 00000000 		.4byte	.LFB129
  4679 006c 10000000 		.4byte	.LFE129-.LFB129
  4680 0070 00000000 		.4byte	0
-ARM GAS  /tmp/cc830ErU.s 			page 84
+ARM GAS  /tmp/ccjtntmA.s 			page 84
 
 
  4681 0074 00000000 		.4byte	0
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4731              	.LASF18:
  4732 0000 74726566 		.ascii	"trefs_t\000"
  4732      735F7400 
-ARM GAS  /tmp/cc830ErU.s 			page 85
+ARM GAS  /tmp/ccjtntmA.s 			page 85
 
 
  4733              	.LASF62:
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4764      33325F64 
  4764      6D615F73 
  4764      74726561 
-ARM GAS  /tmp/cc830ErU.s 			page 86
+ARM GAS  /tmp/ccjtntmA.s 			page 86
 
 
  4764      6D7300
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4794      65756500 
  4795              	.LASF19:
  4796 011c 74736C69 		.ascii	"tslices_t\000"
-ARM GAS  /tmp/cc830ErU.s 			page 87
+ARM GAS  /tmp/ccjtntmA.s 			page 87
 
 
  4796      6365735F 
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4824 01ae 656E645F 		.ascii	"end_cb\000"
  4824      636200
  4825              	.LASF133:
-ARM GAS  /tmp/cc830ErU.s 			page 88
+ARM GAS  /tmp/ccjtntmA.s 			page 88
 
 
  4826 01b5 7278646D 		.ascii	"rxdmamode\000"
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4852      6C6C645F 
  4852      756E7365 
  4852      6C656374 
-ARM GAS  /tmp/cc830ErU.s 			page 89
+ARM GAS  /tmp/ccjtntmA.s 			page 89
 
 
  4852      00
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4883              	.LASF86:
  4884 02d7 41504232 		.ascii	"APB2LPENR\000"
  4884      4C50454E 
-ARM GAS  /tmp/cc830ErU.s 			page 90
+ARM GAS  /tmp/ccjtntmA.s 			page 90
 
 
  4884      5200
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4911      642E6300 
  4912              	.LASF45:
  4913 0393 54687265 		.ascii	"ThreadsQueue\000"
-ARM GAS  /tmp/cc830ErU.s 			page 91
+ARM GAS  /tmp/ccjtntmA.s 			page 91
 
 
  4913      61647351 
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4941      3800
  4942              	.LASF20:
  4943 041b 74707269 		.ascii	"tprio_t\000"
-ARM GAS  /tmp/cc830ErU.s 			page 92
+ARM GAS  /tmp/ccjtntmA.s 			page 92
 
 
  4943      6F5F7400 
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  4970      65656D70 
  4970      7400
  4971              	.LASF83:
-ARM GAS  /tmp/cc830ErU.s 			page 93
+ARM GAS  /tmp/ccjtntmA.s 			page 93
 
 
  4972 04db 41484233 		.ascii	"AHB3LPENR\000"
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  5000      00
  5001              	.LASF146:
  5002 0568 7370695F 		.ascii	"spi_lld_stop\000"
-ARM GAS  /tmp/cc830ErU.s 			page 94
+ARM GAS  /tmp/ccjtntmA.s 			page 94
 
 
  5002      6C6C645F 
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  5028      72746964 
  5028      5F7400
  5029              	.LASF75:
-ARM GAS  /tmp/cc830ErU.s 			page 95
+ARM GAS  /tmp/ccjtntmA.s 			page 95
 
 
  5030 05fe 41484232 		.ascii	"AHB2ENR\000"
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  5058      6B5F6C6F 
  5058      636B5F66 
  5058      726F6D5F 
-ARM GAS  /tmp/cc830ErU.s 			page 96
+ARM GAS  /tmp/ccjtntmA.s 			page 96
 
 
  5059              	.LASF58:
@@ -5746,58 +5746,58 @@ ARM GAS  /tmp/cc830ErU.s 			page 1
  5080      6974696E 
  5080      6700
  5081              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
-ARM GAS  /tmp/cc830ErU.s 			page 97
+ARM GAS  /tmp/ccjtntmA.s 			page 97
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 spi_lld.c
-     /tmp/cc830ErU.s:19     .text.spi_lld_serve_tx_interrupt:00000000 $t
-     /tmp/cc830ErU.s:24     .text.spi_lld_serve_tx_interrupt:00000000 spi_lld_serve_tx_interrupt
-     /tmp/cc830ErU.s:46     .text.spi_lld_serve_rx_interrupt:00000000 $t
-     /tmp/cc830ErU.s:51     .text.spi_lld_serve_rx_interrupt:00000000 spi_lld_serve_rx_interrupt
-     /tmp/cc830ErU.s:181    .text.spi_lld_init:00000000 $t
-     /tmp/cc830ErU.s:187    .text.spi_lld_init:00000000 spi_lld_init
-     /tmp/cc830ErU.s:1058   .bss.dummytx:00000000 .LANCHOR0
-     /tmp/cc830ErU.s:1065   .bss.SPID1:00000000 .LANCHOR1
-     /tmp/cc830ErU.s:1072   .bss.SPID2:00000000 .LANCHOR2
-     /tmp/cc830ErU.s:1079   .bss.SPID3:00000000 .LANCHOR3
-     /tmp/cc830ErU.s:306    .text.spi_lld_init:000000b0 $d
-     /tmp/cc830ErU.s:311    .text.spi_lld_start:00000000 $t
-     /tmp/cc830ErU.s:317    .text.spi_lld_start:00000000 spi_lld_start
-     /tmp/cc830ErU.s:586    .text.spi_lld_start:00000140 $d
-     /tmp/cc830ErU.s:602    .text.spi_lld_stop:00000000 $t
-     /tmp/cc830ErU.s:608    .text.spi_lld_stop:00000000 spi_lld_stop
-     /tmp/cc830ErU.s:686    .text.spi_lld_stop:00000068 $d
-     /tmp/cc830ErU.s:693    .text.spi_lld_select:00000000 $t
-     /tmp/cc830ErU.s:699    .text.spi_lld_select:00000000 spi_lld_select
-     /tmp/cc830ErU.s:721    .text.spi_lld_unselect:00000000 $t
-     /tmp/cc830ErU.s:727    .text.spi_lld_unselect:00000000 spi_lld_unselect
-     /tmp/cc830ErU.s:749    .text.spi_lld_ignore:00000000 $t
-     /tmp/cc830ErU.s:755    .text.spi_lld_ignore:00000000 spi_lld_ignore
-     /tmp/cc830ErU.s:1100   .bss.dummyrx:00000000 .LANCHOR4
-     /tmp/cc830ErU.s:818    .text.spi_lld_exchange:00000000 $t
-     /tmp/cc830ErU.s:824    .text.spi_lld_exchange:00000000 spi_lld_exchange
-     /tmp/cc830ErU.s:886    .text.spi_lld_send:00000000 $t
-     /tmp/cc830ErU.s:892    .text.spi_lld_send:00000000 spi_lld_send
-     /tmp/cc830ErU.s:954    .text.spi_lld_receive:00000000 $t
-     /tmp/cc830ErU.s:960    .text.spi_lld_receive:00000000 spi_lld_receive
-     /tmp/cc830ErU.s:1022   .text.spi_lld_polled_exchange:00000000 $t
-     /tmp/cc830ErU.s:1028   .text.spi_lld_polled_exchange:00000000 spi_lld_polled_exchange
-     /tmp/cc830ErU.s:1082   .bss.SPID3:00000000 SPID3
-     /tmp/cc830ErU.s:1075   .bss.SPID2:00000000 SPID2
-     /tmp/cc830ErU.s:1068   .bss.SPID1:00000000 SPID1
-     /tmp/cc830ErU.s:1057   .bss.dummytx:00000000 $d
-     /tmp/cc830ErU.s:1061   .bss.dummytx:00000000 dummytx
-     /tmp/cc830ErU.s:1064   .bss.SPID1:00000000 $d
-     /tmp/cc830ErU.s:1071   .bss.SPID2:00000000 $d
-     /tmp/cc830ErU.s:1078   .bss.SPID3:00000000 $d
-     /tmp/cc830ErU.s:1085   .rodata.str1.4:00000000 $d
-     /tmp/cc830ErU.s:1099   .bss.dummyrx:00000000 $d
-     /tmp/cc830ErU.s:1103   .bss.dummyrx:00000000 dummyrx
+     /tmp/ccjtntmA.s:19     .text.spi_lld_serve_tx_interrupt:00000000 $t
+     /tmp/ccjtntmA.s:24     .text.spi_lld_serve_tx_interrupt:00000000 spi_lld_serve_tx_interrupt
+     /tmp/ccjtntmA.s:46     .text.spi_lld_serve_rx_interrupt:00000000 $t
+     /tmp/ccjtntmA.s:51     .text.spi_lld_serve_rx_interrupt:00000000 spi_lld_serve_rx_interrupt
+     /tmp/ccjtntmA.s:181    .text.spi_lld_init:00000000 $t
+     /tmp/ccjtntmA.s:187    .text.spi_lld_init:00000000 spi_lld_init
+     /tmp/ccjtntmA.s:1058   .bss.dummytx:00000000 .LANCHOR0
+     /tmp/ccjtntmA.s:1065   .bss.SPID1:00000000 .LANCHOR1
+     /tmp/ccjtntmA.s:1072   .bss.SPID2:00000000 .LANCHOR2
+     /tmp/ccjtntmA.s:1079   .bss.SPID3:00000000 .LANCHOR3
+     /tmp/ccjtntmA.s:306    .text.spi_lld_init:000000b0 $d
+     /tmp/ccjtntmA.s:311    .text.spi_lld_start:00000000 $t
+     /tmp/ccjtntmA.s:317    .text.spi_lld_start:00000000 spi_lld_start
+     /tmp/ccjtntmA.s:586    .text.spi_lld_start:00000140 $d
+     /tmp/ccjtntmA.s:602    .text.spi_lld_stop:00000000 $t
+     /tmp/ccjtntmA.s:608    .text.spi_lld_stop:00000000 spi_lld_stop
+     /tmp/ccjtntmA.s:686    .text.spi_lld_stop:00000068 $d
+     /tmp/ccjtntmA.s:693    .text.spi_lld_select:00000000 $t
+     /tmp/ccjtntmA.s:699    .text.spi_lld_select:00000000 spi_lld_select
+     /tmp/ccjtntmA.s:721    .text.spi_lld_unselect:00000000 $t
+     /tmp/ccjtntmA.s:727    .text.spi_lld_unselect:00000000 spi_lld_unselect
+     /tmp/ccjtntmA.s:749    .text.spi_lld_ignore:00000000 $t
+     /tmp/ccjtntmA.s:755    .text.spi_lld_ignore:00000000 spi_lld_ignore
+     /tmp/ccjtntmA.s:1100   .bss.dummyrx:00000000 .LANCHOR4
+     /tmp/ccjtntmA.s:818    .text.spi_lld_exchange:00000000 $t
+     /tmp/ccjtntmA.s:824    .text.spi_lld_exchange:00000000 spi_lld_exchange
+     /tmp/ccjtntmA.s:886    .text.spi_lld_send:00000000 $t
+     /tmp/ccjtntmA.s:892    .text.spi_lld_send:00000000 spi_lld_send
+     /tmp/ccjtntmA.s:954    .text.spi_lld_receive:00000000 $t
+     /tmp/ccjtntmA.s:960    .text.spi_lld_receive:00000000 spi_lld_receive
+     /tmp/ccjtntmA.s:1022   .text.spi_lld_polled_exchange:00000000 $t
+     /tmp/ccjtntmA.s:1028   .text.spi_lld_polled_exchange:00000000 spi_lld_polled_exchange
+     /tmp/ccjtntmA.s:1082   .bss.SPID3:00000000 SPID3
+     /tmp/ccjtntmA.s:1075   .bss.SPID2:00000000 SPID2
+     /tmp/ccjtntmA.s:1068   .bss.SPID1:00000000 SPID1
+     /tmp/ccjtntmA.s:1057   .bss.dummytx:00000000 $d
+     /tmp/ccjtntmA.s:1061   .bss.dummytx:00000000 dummytx
+     /tmp/ccjtntmA.s:1064   .bss.SPID1:00000000 $d
+     /tmp/ccjtntmA.s:1071   .bss.SPID2:00000000 $d
+     /tmp/ccjtntmA.s:1078   .bss.SPID3:00000000 $d
+     /tmp/ccjtntmA.s:1085   .rodata.str1.4:00000000 $d
+     /tmp/ccjtntmA.s:1099   .bss.dummyrx:00000000 $d
+     /tmp/ccjtntmA.s:1103   .bss.dummyrx:00000000 dummyrx
                      .debug_frame:00000010 $d
-     /tmp/cc830ErU.s:310    .text.spi_lld_init:000000b4 $t
-     /tmp/cc830ErU.s:601    .text.spi_lld_start:0000016c $t
-     /tmp/cc830ErU.s:692    .text.spi_lld_stop:00000074 $t
+     /tmp/ccjtntmA.s:310    .text.spi_lld_init:000000b4 $t
+     /tmp/ccjtntmA.s:601    .text.spi_lld_start:0000016c $t
+     /tmp/ccjtntmA.s:692    .text.spi_lld_stop:00000074 $t
 
 UNDEFINED SYMBOLS
 port_halt
@@ -5806,7 +5806,7 @@ chSchReadyI
 dbg_check_unlock_from_isr
 spiObjectInit
 _stm32_dma_streams
-ARM GAS  /tmp/cc830ErU.s 			page 98
+ARM GAS  /tmp/ccjtntmA.s 			page 98
 
 
 dmaStreamAllocate

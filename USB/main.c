@@ -9,14 +9,9 @@
 #include "chprintf.h"
 
 
-#include "USB.h"
+//#include "USB.h"
 
-
-
-/* static const ShellConfig shell_cfg1 = { */
-/*   (BaseSequentialStream *)&SDU1, */
-/*   commands */
-/* }; */
+#include "usbdescriptor.h"
 
 /*
  * Application entry point.
@@ -37,23 +32,26 @@ int main(void) {
   /*
    * Activates the USB driver and then the USB bus pull-up on D+.
    */
-  myUSBinit();
+    myUSBinit();
 
 
 
-  BaseSequentialStream *chp =   (BaseSequentialStream *)&SDU1;
-
-  static uint8_t j[] = "0123456789abcdef";
+  /* BaseSequentialStream *chp =   (BaseSequentialStream *)&SDU1; */
+  uint16_t i;
+  for(i=0;i<sizeof transferBuf;i++)
+    transferBuf[i] = i;
+  /* transferBuf[0] = 0; //1,2,3,4,5,6,7,8,9}; */
+ 
 
   /*
    * Main loop, does nothing except spawn a shell when the old one was terminated
    */
   while (TRUE) {
-    if (isUsbActive())
+    if (initUSB)
       {
 	//       uint8_t i = receive_data();
 	//chprintf(chp,"Got %d \n", i);
-	send_data(j);
+	send_data();
 	//chprintf(chp,"sent data \n");
       }
     chThdSleepMilliseconds(1000);

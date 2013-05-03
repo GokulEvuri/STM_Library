@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccJlJh5T.s 			page 1
+ARM GAS  /tmp/cczDT60h.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
   55 0016 6068     		ldr	r0, [r4, #4]
   56 0018 0A69     		ldr	r2, [r1, #16]
   57 001a 22FA03F3 		lsr	r3, r2, r3
-ARM GAS  /tmp/ccJlJh5T.s 			page 2
+ARM GAS  /tmp/cczDT60h.s 			page 2
 
 
   58              		.loc 1 75 0
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  111              	.LVL6:
  112 0022 1540     		ands	r5, r5, r2
  113              	.LVL7:
-ARM GAS  /tmp/ccJlJh5T.s 			page 3
+ARM GAS  /tmp/cczDT60h.s 			page 3
 
 
  114 0024 05FA03F3 		lsl	r3, r5, r3
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  167 001a 2A46     		mov	r2, r5
  168 001c 01FA03F1 		lsl	r1, r1, r3
  169              		.loc 1 123 0
-ARM GAS  /tmp/ccJlJh5T.s 			page 4
+ARM GAS  /tmp/cczDT60h.s 			page 4
 
 
  170 0020 BDE83840 		pop	{r3, r4, r5, lr}
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  214 0028 696E7400 		.ascii	"int\000"
  215 002c 03       		.uleb128 0x3
  216 002d 04       		.byte	0x4
-ARM GAS  /tmp/ccJlJh5T.s 			page 5
+ARM GAS  /tmp/cczDT60h.s 			page 5
 
 
  217 002e 07       		.byte	0x7
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  271 0097 05       		.uleb128 0x5
  272 0098 6C000000 		.4byte	0x6c
  273 009c 03       		.uleb128 0x3
-ARM GAS  /tmp/ccJlJh5T.s 			page 6
+ARM GAS  /tmp/cczDT60h.s 			page 6
 
 
  274 009d 04       		.byte	0x4
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  328 00fc 03       		.byte	0x3
  329 00fd 8C       		.byte	0x8c
  330 00fe 8F010000 		.4byte	0x18f
-ARM GAS  /tmp/ccJlJh5T.s 			page 7
+ARM GAS  /tmp/cczDT60h.s 			page 7
 
 
  331 0102 0A       		.uleb128 0xa
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  385 0162 23       		.byte	0x23
  386 0163 18       		.uleb128 0x18
  387 0164 0A       		.uleb128 0xa
-ARM GAS  /tmp/ccJlJh5T.s 			page 8
+ARM GAS  /tmp/cczDT60h.s 			page 8
 
 
  388 0165 00000000 		.4byte	.LASF21
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  442 01ce 0A       		.uleb128 0xa
  443 01cf 48000000 		.4byte	.LASF28
  444 01d3 04       		.byte	0x4
-ARM GAS  /tmp/ccJlJh5T.s 			page 9
+ARM GAS  /tmp/cczDT60h.s 			page 9
 
 
  445 01d4 82       		.byte	0x82
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  499 0243 00       		.byte	0
  500 0244 00       		.byte	0
  501 0245 06       		.uleb128 0x6
-ARM GAS  /tmp/ccJlJh5T.s 			page 10
+ARM GAS  /tmp/cczDT60h.s 			page 10
 
 
  502 0246 04       		.byte	0x4
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  556 02c1 06010000 		.4byte	.LASF35
  557 02c5 01       		.byte	0x1
  558 02c6 75       		.byte	0x75
-ARM GAS  /tmp/ccJlJh5T.s 			page 11
+ARM GAS  /tmp/cczDT60h.s 			page 11
 
 
  559 02c7 AA010000 		.4byte	0x1aa
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  613 032f 17       		.uleb128 0x17
  614 0330 AA010000 		.4byte	0x1aa
  615 0334 00       		.byte	0
-ARM GAS  /tmp/ccJlJh5T.s 			page 12
+ARM GAS  /tmp/cczDT60h.s 			page 12
 
 
  616 0335 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  670 0033 13       		.uleb128 0x13
  671 0034 00       		.byte	0
  672 0035 00       		.byte	0
-ARM GAS  /tmp/ccJlJh5T.s 			page 13
+ARM GAS  /tmp/cczDT60h.s 			page 13
 
 
  673 0036 05       		.uleb128 0x5
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  727 006c 03       		.uleb128 0x3
  728 006d 0E       		.uleb128 0xe
  729 006e 3A       		.uleb128 0x3a
-ARM GAS  /tmp/ccJlJh5T.s 			page 14
+ARM GAS  /tmp/cczDT60h.s 			page 14
 
 
  730 006f 0B       		.uleb128 0xb
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  784 00a5 40       		.uleb128 0x40
  785 00a6 06       		.uleb128 0x6
  786 00a7 9742     		.uleb128 0x2117
-ARM GAS  /tmp/ccJlJh5T.s 			page 15
+ARM GAS  /tmp/cczDT60h.s 			page 15
 
 
  787 00a9 0C       		.uleb128 0xc
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  841 00e4 01       		.uleb128 0x1
  842 00e5 40       		.uleb128 0x40
  843 00e6 06       		.uleb128 0x6
-ARM GAS  /tmp/ccJlJh5T.s 			page 16
+ARM GAS  /tmp/cczDT60h.s 			page 16
 
 
  844 00e7 9742     		.uleb128 0x2117
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  898 0123 3F       		.uleb128 0x3f
  899 0124 0C       		.uleb128 0xc
  900 0125 3C       		.uleb128 0x3c
-ARM GAS  /tmp/ccJlJh5T.s 			page 17
+ARM GAS  /tmp/cczDT60h.s 			page 17
 
 
  901 0126 0C       		.uleb128 0xc
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  955 000b 00       		.sleb128 0
  956 000c 02000000 		.4byte	.LCFI0
  957 0010 28000000 		.4byte	.LFE118
-ARM GAS  /tmp/ccJlJh5T.s 			page 18
+ARM GAS  /tmp/cczDT60h.s 			page 18
 
 
  958 0014 0200     		.2byte	0x2
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  1012 009d 0100     		.2byte	0x1
  1013 009f 55       		.byte	0x55
  1014 00a0 24000000 		.4byte	.LVL7
-ARM GAS  /tmp/ccJlJh5T.s 			page 19
+ARM GAS  /tmp/cczDT60h.s 			page 19
 
 
  1015 00a4 38000000 		.4byte	.LFE119
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  1069 001c 38000000 		.4byte	.LFE119-.LFB119
  1070 0020 00000000 		.4byte	.LFB120
  1071 0024 2C000000 		.4byte	.LFE120-.LFB120
-ARM GAS  /tmp/ccJlJh5T.s 			page 20
+ARM GAS  /tmp/cczDT60h.s 			page 20
 
 
  1072 0028 00000000 		.4byte	0
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  1106      72746D61 
  1106      736B5F74 
  1106      00
-ARM GAS  /tmp/ccJlJh5T.s 			page 21
+ARM GAS  /tmp/cczDT60h.s 			page 21
 
 
  1107              	.LASF17:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  1132      676E6564 
  1132      20696E74 
  1132      00
-ARM GAS  /tmp/ccJlJh5T.s 			page 22
+ARM GAS  /tmp/cczDT60h.s 			page 22
 
 
  1133              	.LASF24:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  1159      36363135 
  1160              	.LASF37:
  1161 01a4 2F686F6D 		.ascii	"/home/gokul/ChibiOS_2.5.0/os/hal/src/pal.c\000"
-ARM GAS  /tmp/ccJlJh5T.s 			page 23
+ARM GAS  /tmp/cczDT60h.s 			page 23
 
 
  1161      652F676F 
@@ -1346,25 +1346,25 @@ ARM GAS  /tmp/ccJlJh5T.s 			page 1
  1171 0200 494F4275 		.ascii	"IOBus\000"
  1171      7300
  1172              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
-ARM GAS  /tmp/ccJlJh5T.s 			page 24
+ARM GAS  /tmp/cczDT60h.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 pal.c
-     /tmp/ccJlJh5T.s:19     .text.palReadBus:00000000 $t
-     /tmp/ccJlJh5T.s:25     .text.palReadBus:00000000 palReadBus
-     /tmp/ccJlJh5T.s:64     .text.palReadBus:00000024 $d
-     /tmp/ccJlJh5T.s:69     .text.palWriteBus:00000000 $t
-     /tmp/ccJlJh5T.s:75     .text.palWriteBus:00000000 palWriteBus
-     /tmp/ccJlJh5T.s:122    .text.palWriteBus:00000034 $d
-     /tmp/ccJlJh5T.s:127    .text.palSetBusMode:00000000 $t
-     /tmp/ccJlJh5T.s:133    .text.palSetBusMode:00000000 palSetBusMode
-     /tmp/ccJlJh5T.s:177    .text.palSetBusMode:00000028 $d
-     /tmp/ccJlJh5T.s:182    .rodata.str1.4:00000000 $d
+     /tmp/cczDT60h.s:19     .text.palReadBus:00000000 $t
+     /tmp/cczDT60h.s:25     .text.palReadBus:00000000 palReadBus
+     /tmp/cczDT60h.s:64     .text.palReadBus:00000024 $d
+     /tmp/cczDT60h.s:69     .text.palWriteBus:00000000 $t
+     /tmp/cczDT60h.s:75     .text.palWriteBus:00000000 palWriteBus
+     /tmp/cczDT60h.s:122    .text.palWriteBus:00000034 $d
+     /tmp/cczDT60h.s:127    .text.palSetBusMode:00000000 $t
+     /tmp/cczDT60h.s:133    .text.palSetBusMode:00000000 palSetBusMode
+     /tmp/cczDT60h.s:177    .text.palSetBusMode:00000028 $d
+     /tmp/cczDT60h.s:182    .rodata.str1.4:00000000 $d
                      .debug_frame:00000010 $d
-     /tmp/ccJlJh5T.s:68     .text.palReadBus:00000028 $t
-     /tmp/ccJlJh5T.s:126    .text.palWriteBus:00000038 $t
-     /tmp/ccJlJh5T.s:181    .text.palSetBusMode:0000002c $t
+     /tmp/cczDT60h.s:68     .text.palReadBus:00000028 $t
+     /tmp/cczDT60h.s:126    .text.palWriteBus:00000038 $t
+     /tmp/cczDT60h.s:181    .text.palSetBusMode:0000002c $t
 
 UNDEFINED SYMBOLS
 chDbgPanic

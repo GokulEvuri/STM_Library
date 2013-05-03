@@ -76,6 +76,7 @@ build/obj/USB.o: USB.c /home/gokul/ChibiOS_2.5.0/os/kernel/include/ch.h \
  /home/gokul/ChibiOS_2.5.0/os/hal/include/serial_usb.h \
  /home/gokul/ChibiOS_2.5.0/os/hal/include/usb_cdc.h \
  /home/gokul/ChibiOS_2.5.0/os/various/shell.h USB.h usbdescriptor.h \
+ /home/gokul/ChibiOS_2.5.0/os/hal/include/usb.h \
  /home/gokul/ChibiOS_2.5.0/os/kernel/include/chstreams.h
 
 /home/gokul/ChibiOS_2.5.0/os/kernel/include/ch.h:
@@ -243,5 +244,7 @@ mcuconf.h:
 USB.h:
 
 usbdescriptor.h:
+
+/home/gokul/ChibiOS_2.5.0/os/hal/include/usb.h:
 
 /home/gokul/ChibiOS_2.5.0/os/kernel/include/chstreams.h:

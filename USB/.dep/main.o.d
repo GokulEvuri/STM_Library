@@ -92,7 +92,8 @@ build/obj/main.o: main.c \
  /home/gokul/ChibiOS_2.5.0/os/hal/include/mmc_spi.h \
  /home/gokul/ChibiOS_2.5.0/os/hal/include/serial_usb.h \
  /home/gokul/ChibiOS_2.5.0/os/various/shell.h \
- /home/gokul/ChibiOS_2.5.0/os/various/chprintf.h USB.h
+ /home/gokul/ChibiOS_2.5.0/os/various/chprintf.h usbdescriptor.h \
+ /home/gokul/ChibiOS_2.5.0/os/hal/include/usb.h
 
 /opt/gcc-arm-none-eabi-4_7-2013q1/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/stdio.h:
 
@@ -288,4 +289,6 @@ mcuconf.h:
 
 /home/gokul/ChibiOS_2.5.0/os/various/chprintf.h:
 
-USB.h:
+usbdescriptor.h:
+
+/home/gokul/ChibiOS_2.5.0/os/hal/include/usb.h:

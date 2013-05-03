@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccDd8Vp3.s 			page 1
+ARM GAS  /tmp/cc0xcaEe.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
   55              	.L2:
   56 0028 07000000 		.word	__heap_base__+7
   57              		.cfi_endproc
-ARM GAS  /tmp/ccDd8Vp3.s 			page 2
+ARM GAS  /tmp/cc0xcaEe.s 			page 2
 
 
   58              	.LFE7:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  112 002c 00000000 		.word	.LANCHOR1
  113              		.cfi_endproc
  114              	.LFE9:
-ARM GAS  /tmp/ccDd8Vp3.s 			page 3
+ARM GAS  /tmp/cc0xcaEe.s 			page 3
 
 
  115              		.size	chCoreAllocI, .-chCoreAllocI
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  169              	.LBE4:
  170              		.loc 1 91 0
  171 0020 2046     		mov	r0, r4
-ARM GAS  /tmp/ccDd8Vp3.s 			page 4
+ARM GAS  /tmp/cc0xcaEe.s 			page 4
 
 
  172 0022 10BD     		pop	{r4, pc}
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  223              	.Ldebug_info0:
  224 0000 2C020000 		.4byte	0x22c
  225 0004 0200     		.2byte	0x2
-ARM GAS  /tmp/ccDd8Vp3.s 			page 5
+ARM GAS  /tmp/cc0xcaEe.s 			page 5
 
 
  226 0006 00000000 		.4byte	.Ldebug_abbrev0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  280 0078 04       		.byte	0x4
  281 0079 07       		.byte	0x7
  282 007a 61000000 		.4byte	.LASF9
-ARM GAS  /tmp/ccDd8Vp3.s 			page 6
+ARM GAS  /tmp/cc0xcaEe.s 			page 6
 
 
  283 007e 04       		.uleb128 0x4
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  337 00e1 0B       		.uleb128 0xb
  338 00e2 01       		.byte	0x1
  339 00e3 4F000000 		.4byte	.LASF16
-ARM GAS  /tmp/ccDd8Vp3.s 			page 7
+ARM GAS  /tmp/cc0xcaEe.s 			page 7
 
 
  340 00e7 01       		.byte	0x1
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  394 016d 01       		.byte	0x1
  395 016e 57       		.byte	0x57
  396 016f 6C000000 		.4byte	0x6c
-ARM GAS  /tmp/ccDd8Vp3.s 			page 8
+ARM GAS  /tmp/cc0xcaEe.s 			page 8
 
 
  397 0173 E5000000 		.4byte	.LLST6
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  451 01eb 01       		.byte	0x1
  452 01ec 34       		.byte	0x34
  453 01ed 9C000000 		.4byte	0x9c
-ARM GAS  /tmp/ccDd8Vp3.s 			page 9
+ARM GAS  /tmp/cc0xcaEe.s 			page 9
 
 
  454 01f1 05       		.byte	0x5
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  508 000d 52       		.uleb128 0x52
  509 000e 01       		.uleb128 0x1
  510 000f 10       		.uleb128 0x10
-ARM GAS  /tmp/ccDd8Vp3.s 			page 10
+ARM GAS  /tmp/cc0xcaEe.s 			page 10
 
 
  511 0010 06       		.uleb128 0x6
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  565 0046 07       		.uleb128 0x7
  566 0047 2E       		.uleb128 0x2e
  567 0048 01       		.byte	0x1
-ARM GAS  /tmp/ccDd8Vp3.s 			page 11
+ARM GAS  /tmp/cc0xcaEe.s 			page 11
 
 
  568 0049 3F       		.uleb128 0x3f
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  622 0080 2E       		.uleb128 0x2e
  623 0081 01       		.byte	0x1
  624 0082 3F       		.uleb128 0x3f
-ARM GAS  /tmp/ccDd8Vp3.s 			page 12
+ARM GAS  /tmp/cc0xcaEe.s 			page 12
 
 
  625 0083 0C       		.uleb128 0xc
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  679 00ba 898201   		.uleb128 0x4109
  680 00bd 00       		.byte	0
  681 00be 11       		.uleb128 0x11
-ARM GAS  /tmp/ccDd8Vp3.s 			page 13
+ARM GAS  /tmp/cc0xcaEe.s 			page 13
 
 
  682 00bf 01       		.uleb128 0x1
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  736 00fa 3B       		.uleb128 0x3b
  737 00fb 0B       		.uleb128 0xb
  738 00fc 27       		.uleb128 0x27
-ARM GAS  /tmp/ccDd8Vp3.s 			page 14
+ARM GAS  /tmp/cc0xcaEe.s 			page 14
 
 
  739 00fd 0C       		.uleb128 0xc
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  793 000c 02000000 		.4byte	.LCFI0
  794 0010 30000000 		.4byte	.LFE9
  795 0014 0200     		.2byte	0x2
-ARM GAS  /tmp/ccDd8Vp3.s 			page 15
+ARM GAS  /tmp/cc0xcaEe.s 			page 15
 
 
  796 0016 7D       		.byte	0x7d
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  850 009b 00000000 		.4byte	.LVL6
  851 009f 0D000000 		.4byte	.LVL9-1
  852 00a3 0100     		.2byte	0x1
-ARM GAS  /tmp/ccDd8Vp3.s 			page 16
+ARM GAS  /tmp/cc0xcaEe.s 			page 16
 
 
  853 00a5 50       		.byte	0x50
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  907 002c 18000000 		.4byte	.LFE10-.LFB10
  908 0030 00000000 		.4byte	0
  909 0034 00000000 		.4byte	0
-ARM GAS  /tmp/ccDd8Vp3.s 			page 17
+ARM GAS  /tmp/cc0xcaEe.s 			page 17
 
 
  910              		.section	.debug_ranges,"",%progbits
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  945              	.LASF16:
  946 004f 6368436F 		.ascii	"chCoreAllocI\000"
  946      7265416C 
-ARM GAS  /tmp/ccDd8Vp3.s 			page 18
+ARM GAS  /tmp/cc0xcaEe.s 			page 18
 
 
  946      6C6F6349 
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  969 010d 5F5F6865 		.ascii	"__heap_base__\000"
  969      61705F62 
  969      6173655F 
-ARM GAS  /tmp/ccDd8Vp3.s 			page 19
+ARM GAS  /tmp/cc0xcaEe.s 			page 19
 
 
  969      5F00
@@ -1127,29 +1127,29 @@ ARM GAS  /tmp/ccDd8Vp3.s 			page 1
  988      65642063 
  988      68617200 
  989              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
-ARM GAS  /tmp/ccDd8Vp3.s 			page 20
+ARM GAS  /tmp/cc0xcaEe.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 chmemcore.c
-     /tmp/ccDd8Vp3.s:19     .text._core_init:00000000 $t
-     /tmp/ccDd8Vp3.s:25     .text._core_init:00000000 _core_init
-     /tmp/ccDd8Vp3.s:212    .bss.nextmem:00000000 .LANCHOR0
-     /tmp/ccDd8Vp3.s:205    .bss.endmem:00000000 .LANCHOR1
-     /tmp/ccDd8Vp3.s:56     .text._core_init:00000028 $d
-     /tmp/ccDd8Vp3.s:61     .text.chCoreAllocI:00000000 $t
-     /tmp/ccDd8Vp3.s:67     .text.chCoreAllocI:00000000 chCoreAllocI
-     /tmp/ccDd8Vp3.s:111    .text.chCoreAllocI:00000028 $d
-     /tmp/ccDd8Vp3.s:117    .text.chCoreAlloc:00000000 $t
-     /tmp/ccDd8Vp3.s:123    .text.chCoreAlloc:00000000 chCoreAlloc
-     /tmp/ccDd8Vp3.s:177    .text.chCoreStatus:00000000 $t
-     /tmp/ccDd8Vp3.s:183    .text.chCoreStatus:00000000 chCoreStatus
-     /tmp/ccDd8Vp3.s:204    .bss.endmem:00000000 $d
-     /tmp/ccDd8Vp3.s:208    .bss.endmem:00000000 endmem
-     /tmp/ccDd8Vp3.s:211    .bss.nextmem:00000000 $d
-     /tmp/ccDd8Vp3.s:215    .bss.nextmem:00000000 nextmem
+     /tmp/cc0xcaEe.s:19     .text._core_init:00000000 $t
+     /tmp/cc0xcaEe.s:25     .text._core_init:00000000 _core_init
+     /tmp/cc0xcaEe.s:212    .bss.nextmem:00000000 .LANCHOR0
+     /tmp/cc0xcaEe.s:205    .bss.endmem:00000000 .LANCHOR1
+     /tmp/cc0xcaEe.s:56     .text._core_init:00000028 $d
+     /tmp/cc0xcaEe.s:61     .text.chCoreAllocI:00000000 $t
+     /tmp/cc0xcaEe.s:67     .text.chCoreAllocI:00000000 chCoreAllocI
+     /tmp/cc0xcaEe.s:111    .text.chCoreAllocI:00000028 $d
+     /tmp/cc0xcaEe.s:117    .text.chCoreAlloc:00000000 $t
+     /tmp/cc0xcaEe.s:123    .text.chCoreAlloc:00000000 chCoreAlloc
+     /tmp/cc0xcaEe.s:177    .text.chCoreStatus:00000000 $t
+     /tmp/cc0xcaEe.s:183    .text.chCoreStatus:00000000 chCoreStatus
+     /tmp/cc0xcaEe.s:204    .bss.endmem:00000000 $d
+     /tmp/cc0xcaEe.s:208    .bss.endmem:00000000 endmem
+     /tmp/cc0xcaEe.s:211    .bss.nextmem:00000000 $d
+     /tmp/cc0xcaEe.s:215    .bss.nextmem:00000000 nextmem
                      .debug_frame:00000010 $d
-     /tmp/ccDd8Vp3.s:60     .text._core_init:0000002c $t
+     /tmp/cc0xcaEe.s:60     .text._core_init:0000002c $t
 
 UNDEFINED SYMBOLS
 __heap_end__

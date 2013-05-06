@@ -14,6 +14,7 @@
 #include "Misc/Misc.h"
 #include "SPI/SPI.h"
 #include "msv/include/ir_protocol.h"
+#include "msv/include/RAZOR.h"
 
 /*
  * assert Shell Commands to functions
@@ -41,6 +42,7 @@ static const ShellCommand commands[] = {
   {"printAccel", cmd_printAccel},
   {"pa", cmd_printAccel},
   {"print", print},
+  {"rz", cmd_printDataFromRazor},
   {NULL, NULL}
 };
 

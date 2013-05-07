@@ -15,6 +15,7 @@
 #include "SPI/SPI.h"
 #include "msv/include/ir_protocol.h"
 #include "msv/include/RAZOR.h"
+#include "msv/include/razor_protocol.h"
 
 /*
  * assert Shell Commands to functions

@@ -92,7 +92,8 @@ CSRC = $(PORTSRC) \
        USB/USB.c \
        Misc/Misc.c \
        SPI/SPI.c \
-       msv/src/ir_protocol.c
+       msv/src/ir_protocol.c \
+       msv/src/RAZOR.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.

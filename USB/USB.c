@@ -14,9 +14,9 @@
  * USB Driver structure.
  */
 
-uint8_t receiveBuf[OUT_PACKETSIZE];
-#define IN_MULT 1
-uint8_t transferBuf[IN_PACKETSIZE*IN_MULT];
+/* uint8_t receiveBuf[OUT_PACKETSIZE]; */
+/* #define IN_MULT 1 */
+/* uint8_t transferBuf[IN_PACKETSIZE*IN_MULT]; */
 
 USBDriver *  	usbp = &USBD1;
 uint8_t initUSB=0;
@@ -213,7 +213,7 @@ void myUSBinit(void){
 
 
 
-void send_data(){
+void send_data(uint8_t transferBuf){
   usbStatus=1;  
   if(initUSB){
     usbPrepareTransmit(usbp, EP_IN, transferBuf, sizeof transferBuf);
@@ -226,7 +226,7 @@ void send_data(){
   // else failed
 }
 
-uint8_t receive_data(){
+uint8_t receive_data(uint8_t receiveBuf){
   // while EP_BUSY 
   usbStatus=1;
   if(initUSB){

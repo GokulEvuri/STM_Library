@@ -9,9 +9,13 @@
 #include "chprintf.h"
 
 
-//#include "USB.h"
+#include "USB.h"
 
 #include "usbdescriptor.h"
+
+//#define IN_MULT 1
+
+uint8_t transferBuf[IN_PACKETSIZE*IN_MULT];
 
 /*
  * Application entry point.
@@ -40,20 +44,17 @@ int main(void) {
   uint16_t i;
   for(i=0;i<sizeof transferBuf;i++)
     transferBuf[i] = i;
-  /* transferBuf[0] = 0; //1,2,3,4,5,6,7,8,9}; */
+ 
  
 
   /*
    * Main loop, does nothing except spawn a shell when the old one was terminated
    */
   while (TRUE) {
-    if (initUSB)
-      {
-	//       uint8_t i = receive_data();
-	//chprintf(chp,"Got %d \n", i);
-	send_data();
-	//chprintf(chp,"sent data \n");
-      }
+    send_data(transferBuf);
+    
     chThdSleepMilliseconds(1000);
   }
+  
+  
 }

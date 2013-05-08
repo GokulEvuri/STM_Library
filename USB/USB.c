@@ -15,14 +15,10 @@
  */
 
 /* uint8_t receiveBuf[OUT_PACKETSIZE]; */
- #define IN_MULT 1
- uint8_t transferBuf[IN_PACKETSIZE*IN_MULT]; 
+//#define IN_MULT 1
+// uint8_t transferBuf[IN_PACKETSIZE*IN_MULT]; 
 
-main(){
-  transferBuf = {0}
 
-  send_data(transferBuf);
-}
 
 USBDriver *  	usbp = &USBD1;
 uint8_t initUSB=0;
@@ -32,26 +28,26 @@ SerialUSBDriver SDU1;
 /*
  * data Transmitted Callback
  */
-void dataTransmitted(USBDriver *usbp, usbep_t ep){
-    (void) usbp;
-    (void) ep;
+/* void dataTransmitted(USBDriver *usbp, usbep_t ep){ */
+/*     (void) usbp; */
+/*     (void) ep; */
 
-    // exit on USB reset
-    if(!usbStatus) return;
+/*     // exit on USB reset */
+/*     if(!usbStatus) return; */
 
 
-    usbPrepareTransmit(usbp, EP_IN, transferBuf, sizeof transferBuf);
+/*     usbPrepareTransmit(usbp, EP_IN, transferBuf, sizeof transferBuf); */
 
-    chSysLockFromIsr();
-    usbStartTransmitI(usbp, EP_IN);
-    chSysUnlockFromIsr();
+/*     chSysLockFromIsr(); */
+/*     usbStartTransmitI(usbp, EP_IN); */
+/*     chSysUnlockFromIsr(); */
 
-}
+/* } */
 
-bool_t requestsHook(USBDriver *usbp) {
-    (void) usbp;
-    return FALSE;
-}
+/* bool_t requestsHook(USBDriver *usbp) { */
+/*     (void) usbp; */
+/*     return FALSE; */
+/* } */
 
 /**
  * @brief   IN EP1 state.
@@ -64,7 +60,8 @@ static USBInEndpointState ep1instate;
 static const USBEndpointConfig ep1config = {
   USB_EP_MODE_TYPE_BULK,    //Type and mode of the endpoint
   NULL,                     //Setup packet notification callback (NULL for non-control EPs)
-  dataTransmitted,          //IN endpoint notification callback
+  //  dataTransmitted,          //IN endpoint notification callback
+  NULL,
   NULL,                     //OUT endpoint notification callback
   IN_PACKETSIZE,            //IN endpoint maximum packet size
   0x0000,                   //OUT endpoint maximum packet size
@@ -76,28 +73,28 @@ static const USBEndpointConfig ep1config = {
 
 /*
  * data Received Callback
- * It prints to shell a string
  */
-void dataReceived(USBDriver *usbp, usbep_t ep){
-    USBOutEndpointState *osp = usbp->epc[ep]->out_state;
-    (void) usbp;
-    (void) ep;
-    // exit on USB reset
-    if(!usbStatus) return;
 
-   if(osp->rxcnt){
-     //  chprintf(chp,"Data received");
-    }
+/* void dataReceived(USBDriver *usbp, usbep_t ep){ */
+/*     USBOutEndpointState *osp = usbp->epc[ep]->out_state; */
+/*     (void) usbp; */
+/*     (void) ep; */
+/*     // exit on USB reset */
+/*     if(!usbStatus) return; */
 
-    /*
-     * Initiate next receive
-     */
-    usbPrepareReceive(usbp, EP_OUT, receiveBuf, 64);
+/*    if(osp->rxcnt){ */
+/*      //  chprintf(chp,"Data received"); */
+/*     } */
 
-    chSysLockFromIsr();
-    usbStartReceiveI(usbp, EP_OUT);
-    chSysUnlockFromIsr();
-}
+/*     /\* */
+/*      * Initiate next receive */
+/*      *\/ */
+/*     usbPrepareReceive(usbp, EP_OUT, receiveBuf, 64); */
+
+/*     chSysLockFromIsr(); */
+/*     usbStartReceiveI(usbp, EP_OUT); */
+/*     chSysUnlockFromIsr(); */
+/* } */
 
 /**
  * @brief   OUT EP2 state.
@@ -111,7 +108,8 @@ static const USBEndpointConfig ep2config = {
   USB_EP_MODE_TYPE_BULK,
   NULL,
   NULL,
-  dataReceived,
+  NULL,
+  //  dataReceived,
   0x0000,
   OUT_PACKETSIZE,
   NULL,
@@ -188,7 +186,8 @@ static const USBDescriptor *get_descriptor(USBDriver *usbp,
 const USBConfig   	config =   {
     usb_event,
     get_descriptor,
-    requestsHook,
+    //requestsHook,
+    NULL,
     NULL
   };
 
@@ -201,7 +200,7 @@ void myUSBinit(void){
   /*
    * Shell manager initialization.
    */
-  shellInit();
+  //  shellInit();
   /*
    * Activates the USB driver and then the USB bus pull-up on D+.
    * Note, a delay is inserted in order to not have to disconnect the cable
@@ -219,7 +218,7 @@ void myUSBinit(void){
 
 
 
-void send_data(uint8_t transferBuf){
+void send_data(uint8_t *transferBuf){
   usbStatus=1;  
   if(initUSB){
     usbPrepareTransmit(usbp, EP_IN, transferBuf, sizeof transferBuf);
@@ -232,7 +231,7 @@ void send_data(uint8_t transferBuf){
   // else failed
 }
 
-uint8_t receive_data(uint8_t receiveBuf){
+uint8_t receive_data(uint8_t *receiveBuf){
   // while EP_BUSY 
   usbStatus=1;
   if(initUSB){
@@ -245,22 +244,3 @@ uint8_t receive_data(uint8_t receiveBuf){
   initUSB=0;
   return 0;
 }
-
-
-/* void send_data(uint32_t buffer){ */
-  
-/*   uint8_t buf1 = buffer >> 24; */
-/*   uint8_t buf2 = buffer >> 16; */
-/*   uint8_t buf3 = buffer >> 8; */
-/*   uint8_t buf4 = buffer; */
-  
-  
-
-/* } */
-
-/* uint16_t receive_data(void){ */
-
-/*   uint8_t buf1; */
-/*   uint8_t buf2; */
-
-/* } */

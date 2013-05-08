@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccohrN6T.s 			page 1
+ARM GAS  /tmp/ccS2o9LC.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
   53              		.global	chSysInit
   54              		.thumb
   55              		.thumb_func
-ARM GAS  /tmp/ccohrN6T.s 			page 2
+ARM GAS  /tmp/ccS2o9LC.s 			page 2
 
 
   56              		.type	chSysInit, %function
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  110              		.loc 1 104 0
  111 0044 FFF7FEFF 		bl	dbg_check_enable
  112              	.LVL9:
-ARM GAS  /tmp/ccohrN6T.s 			page 3
+ARM GAS  /tmp/ccS2o9LC.s 			page 3
 
 
  113              	.LBB2:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  166              		.cfi_offset 14, -4
  167              		.loc 1 130 0
  168 0002 FFF7FEFF 		bl	chDbgCheckClassI
-ARM GAS  /tmp/ccohrN6T.s 			page 4
+ARM GAS  /tmp/ccS2o9LC.s 			page 4
 
 
  169              	.LVL14:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  223              	.LBB6:
  224 004a 2023     		movs	r3, #32
  225              	.LVL21:
-ARM GAS  /tmp/ccohrN6T.s 			page 5
+ARM GAS  /tmp/ccS2o9LC.s 			page 5
 
 
  226              	@ 141 "/home/gokul/ChibiOS_2.5.0/os/kernel/src/chsys.c" 1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  273 0000 00000000 		.space	192
  273      00000000 
  273      00000000 
-ARM GAS  /tmp/ccohrN6T.s 			page 6
+ARM GAS  /tmp/ccS2o9LC.s 			page 6
 
 
  273      00000000 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  326 0052 08       		.byte	0x8
  327 0053 C5020000 		.4byte	.LASF4
  328 0057 04       		.uleb128 0x4
-ARM GAS  /tmp/ccohrN6T.s 			page 7
+ARM GAS  /tmp/ccS2o9LC.s 			page 7
 
 
  329 0058 02       		.byte	0x2
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  383 00c4 CF000000 		.4byte	.LASF17
  384 00c8 04       		.byte	0x4
  385 00c9 2B       		.byte	0x2b
-ARM GAS  /tmp/ccohrN6T.s 			page 8
+ARM GAS  /tmp/ccS2o9LC.s 			page 8
 
 
  386 00ca 45000000 		.4byte	0x45
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  440 0139 23       		.byte	0x23
  441 013a 08       		.uleb128 0x8
  442 013b 06       		.uleb128 0x6
-ARM GAS  /tmp/ccohrN6T.s 			page 9
+ARM GAS  /tmp/ccS2o9LC.s 			page 9
 
 
  443 013c 47040000 		.4byte	.LASF26
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  497 019c 21       		.uleb128 0x21
  498 019d 06       		.uleb128 0x6
  499 019e DD030000 		.4byte	.LASF33
-ARM GAS  /tmp/ccohrN6T.s 			page 10
+ARM GAS  /tmp/ccS2o9LC.s 			page 10
 
 
  500 01a2 06       		.byte	0x6
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  554 01ff 06       		.uleb128 0x6
  555 0200 28030000 		.4byte	.LASF39
  556 0204 06       		.byte	0x6
-ARM GAS  /tmp/ccohrN6T.s 			page 11
+ARM GAS  /tmp/ccS2o9LC.s 			page 11
 
 
  557 0205 C2       		.byte	0xc2
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  611 025f FA000000 		.4byte	0xfa
  612 0263 03       		.uleb128 0x3
  613 0264 31020000 		.4byte	.LASF43
-ARM GAS  /tmp/ccohrN6T.s 			page 12
+ARM GAS  /tmp/ccS2o9LC.s 			page 12
 
 
  614 0268 05       		.byte	0x5
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  668 02cf 23       		.byte	0x23
  669 02d0 04       		.uleb128 0x4
  670 02d1 0C       		.uleb128 0xc
-ARM GAS  /tmp/ccohrN6T.s 			page 13
+ARM GAS  /tmp/ccS2o9LC.s 			page 13
 
 
  671 02d2 723600   		.ascii	"r6\000"
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  725 0334 20       		.uleb128 0x20
  726 0335 00       		.byte	0
  727 0336 0B       		.uleb128 0xb
-ARM GAS  /tmp/ccohrN6T.s 			page 14
+ARM GAS  /tmp/ccS2o9LC.s 			page 14
 
 
  728 0337 89010000 		.4byte	.LASF48
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  782 03a2 06       		.uleb128 0x6
  783 03a3 14010000 		.4byte	.LASF53
  784 03a7 08       		.byte	0x8
-ARM GAS  /tmp/ccohrN6T.s 			page 15
+ARM GAS  /tmp/ccS2o9LC.s 			page 15
 
 
  785 03a8 5D       		.byte	0x5d
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  839 0405 06       		.uleb128 0x6
  840 0406 0A020000 		.4byte	.LASF54
  841 040a 08       		.byte	0x8
-ARM GAS  /tmp/ccohrN6T.s 			page 16
+ARM GAS  /tmp/ccS2o9LC.s 			page 16
 
 
  842 040b 71       		.byte	0x71
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  896 046b 5D020000 		.4byte	0x25d
  897 046f 02       		.byte	0x2
  898 0470 23       		.byte	0x23
-ARM GAS  /tmp/ccohrN6T.s 			page 17
+ARM GAS  /tmp/ccS2o9LC.s 			page 17
 
 
  899 0471 10       		.uleb128 0x10
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  953 04d1 09       		.uleb128 0x9
  954 04d2 04       		.byte	0x4
  955 04d3 9A040000 		.4byte	0x49a
-ARM GAS  /tmp/ccohrN6T.s 			page 18
+ARM GAS  /tmp/ccS2o9LC.s 			page 18
 
 
  956 04d7 03       		.uleb128 0x3
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1010 0546 13       		.uleb128 0x13
  1011 0547 01       		.byte	0x1
  1012 0548 D9000000 		.4byte	0xd9
-ARM GAS  /tmp/ccohrN6T.s 			page 19
+ARM GAS  /tmp/ccS2o9LC.s 			page 19
 
 
  1013 054c 56050000 		.4byte	0x556
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1067 05c2 1A       		.uleb128 0x1a
  1068 05c3 746D7000 		.ascii	"tmp\000"
  1069 05c7 01       		.byte	0x1
-ARM GAS  /tmp/ccohrN6T.s 			page 20
+ARM GAS  /tmp/ccS2o9LC.s 			page 20
 
 
  1070 05c8 68       		.byte	0x68
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1124 0643 02       		.byte	0x2
  1125 0644 75       		.byte	0x75
  1126 0645 00       		.sleb128 0
-ARM GAS  /tmp/ccohrN6T.s 			page 21
+ARM GAS  /tmp/ccS2o9LC.s 			page 21
 
 
  1127 0646 1D       		.uleb128 0x1d
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1181 06b7 1A       		.uleb128 0x1a
  1182 06b8 746D7000 		.ascii	"tmp\000"
  1183 06bc 01       		.byte	0x1
-ARM GAS  /tmp/ccohrN6T.s 			page 22
+ARM GAS  /tmp/ccS2o9LC.s 			page 22
 
 
  1184 06bd 8D       		.byte	0x8d
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1238 0735 F3000000 		.4byte	.LASF83
  1239 0739 01       		.byte	0x1
  1240 073a 2A       		.byte	0x2a
-ARM GAS  /tmp/ccohrN6T.s 			page 23
+ARM GAS  /tmp/ccS2o9LC.s 			page 23
 
 
  1241 073b 24070000 		.4byte	0x724
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1295 0790 26       		.uleb128 0x26
  1296 0791 01       		.byte	0x1
  1297 0792 3C030000 		.4byte	.LASF91
-ARM GAS  /tmp/ccohrN6T.s 			page 24
+ARM GAS  /tmp/ccS2o9LC.s 			page 24
 
 
  1298 0796 06       		.byte	0x6
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1352 07fb B6010000 		.4byte	.LASF95
  1353 07ff 0D       		.byte	0xd
  1354 0800 E6       		.byte	0xe6
-ARM GAS  /tmp/ccohrN6T.s 			page 25
+ARM GAS  /tmp/ccS2o9LC.s 			page 25
 
 
  1355 0801 01       		.byte	0x1
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1409 0031 0B       		.uleb128 0xb
  1410 0032 03       		.uleb128 0x3
  1411 0033 0E       		.uleb128 0xe
-ARM GAS  /tmp/ccohrN6T.s 			page 26
+ARM GAS  /tmp/ccS2o9LC.s 			page 26
 
 
  1412 0034 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1466 006a 3B       		.uleb128 0x3b
  1467 006b 0B       		.uleb128 0xb
  1468 006c 01       		.uleb128 0x1
-ARM GAS  /tmp/ccohrN6T.s 			page 27
+ARM GAS  /tmp/ccS2o9LC.s 			page 27
 
 
  1469 006d 13       		.uleb128 0x13
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1523 00a3 01       		.uleb128 0x1
  1524 00a4 13       		.uleb128 0x13
  1525 00a5 00       		.byte	0
-ARM GAS  /tmp/ccohrN6T.s 			page 28
+ARM GAS  /tmp/ccS2o9LC.s 			page 28
 
 
  1526 00a6 00       		.byte	0
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1580 00dc 13       		.uleb128 0x13
  1581 00dd 01       		.uleb128 0x1
  1582 00de 13       		.uleb128 0x13
-ARM GAS  /tmp/ccohrN6T.s 			page 29
+ARM GAS  /tmp/ccS2o9LC.s 			page 29
 
 
  1583 00df 00       		.byte	0
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1637 0116 0C       		.uleb128 0xc
  1638 0117 11       		.uleb128 0x11
  1639 0118 01       		.uleb128 0x1
-ARM GAS  /tmp/ccohrN6T.s 			page 30
+ARM GAS  /tmp/ccS2o9LC.s 			page 30
 
 
  1640 0119 12       		.uleb128 0x12
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1694 0150 34       		.uleb128 0x34
  1695 0151 00       		.byte	0
  1696 0152 03       		.uleb128 0x3
-ARM GAS  /tmp/ccohrN6T.s 			page 31
+ARM GAS  /tmp/ccS2o9LC.s 			page 31
 
 
  1697 0153 08       		.uleb128 0x8
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1751 0192 12       		.uleb128 0x12
  1752 0193 01       		.uleb128 0x1
  1753 0194 00       		.byte	0
-ARM GAS  /tmp/ccohrN6T.s 			page 32
+ARM GAS  /tmp/ccS2o9LC.s 			page 32
 
 
  1754 0195 00       		.byte	0
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1808 01ce 3B       		.uleb128 0x3b
  1809 01cf 05       		.uleb128 0x5
  1810 01d0 27       		.uleb128 0x27
-ARM GAS  /tmp/ccohrN6T.s 			page 33
+ARM GAS  /tmp/ccS2o9LC.s 			page 33
 
 
  1811 01d1 0C       		.uleb128 0xc
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1865 0015 F3       		.byte	0xf3
  1866 0016 01       		.uleb128 0x1
  1867 0017 50       		.byte	0x50
-ARM GAS  /tmp/ccohrN6T.s 			page 34
+ARM GAS  /tmp/ccS2o9LC.s 			page 34
 
 
  1868 0018 9F       		.byte	0x9f
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1922 00a2 00000000 		.4byte	0
  1923              	.LLST6:
  1924 00a6 46000000 		.4byte	.LVL19
-ARM GAS  /tmp/ccohrN6T.s 			page 35
+ARM GAS  /tmp/ccS2o9LC.s 			page 35
 
 
  1925 00aa 49000000 		.4byte	.LVL20-1
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1972              	.LASF70:
  1973 0015 7264796D 		.ascii	"rdymsg\000"
  1973      736700
-ARM GAS  /tmp/ccohrN6T.s 			page 36
+ARM GAS  /tmp/ccS2o9LC.s 			page 36
 
 
  1974              	.LASF12:
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  1998              	.LASF42:
  1999 00bf 705F6D70 		.ascii	"p_mpool\000"
  1999      6F6F6C00 
-ARM GAS  /tmp/ccohrN6T.s 			page 37
+ARM GAS  /tmp/ccS2o9LC.s 			page 37
 
 
  2000              	.LASF67:
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  2027      694F535F 
  2028              	.LASF10:
  2029 0177 6C6F6E67 		.ascii	"long unsigned int\000"
-ARM GAS  /tmp/ccohrN6T.s 			page 38
+ARM GAS  /tmp/ccS2o9LC.s 			page 38
 
 
  2029      20756E73 
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  2055 0212 73697A65 		.ascii	"sizetype\000"
  2055      74797065 
  2055      00
-ARM GAS  /tmp/ccohrN6T.s 			page 39
+ARM GAS  /tmp/ccS2o9LC.s 			page 39
 
 
  2056              	.LASF55:
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  2083              	.LASF87:
  2084 02d3 5F636F72 		.ascii	"_core_init\000"
  2084      655F696E 
-ARM GAS  /tmp/ccohrN6T.s 			page 40
+ARM GAS  /tmp/ccS2o9LC.s 			page 40
 
 
  2084      697400
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  2114      00
  2115              	.LASF80:
  2116 0363 5F5F6D61 		.ascii	"__main_thread_stack_base__\000"
-ARM GAS  /tmp/ccohrN6T.s 			page 41
+ARM GAS  /tmp/ccS2o9LC.s 			page 41
 
 
  2116      696E5F74 
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  2144      385F7400 
  2145              	.LASF84:
  2146 03fc 5F706F72 		.ascii	"_port_init\000"
-ARM GAS  /tmp/ccohrN6T.s 			page 42
+ARM GAS  /tmp/ccS2o9LC.s 			page 42
 
 
  2146      745F696E 
@@ -2493,30 +2493,30 @@ ARM GAS  /tmp/ccohrN6T.s 			page 1
  2162      6974696E 
  2162      6700
  2163              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
-ARM GAS  /tmp/ccohrN6T.s 			page 43
+ARM GAS  /tmp/ccS2o9LC.s 			page 43
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 chsys.c
-     /tmp/ccohrN6T.s:19     .text._idle_thread:00000000 $t
-     /tmp/ccohrN6T.s:25     .text._idle_thread:00000000 _idle_thread
-     /tmp/ccohrN6T.s:45     .text._idle_thread:0000000c $d
-     /tmp/ccohrN6T.s:51     .text.chSysInit:00000000 $t
-     /tmp/ccohrN6T.s:57     .text.chSysInit:00000000 chSysInit
-     /tmp/ccohrN6T.s:255    .bss.mainthread.4816:00000000 .LANCHOR0
-     /tmp/ccohrN6T.s:265    .rodata.str1.4:00000008 .LC1
-     /tmp/ccohrN6T.s:269    .bss._idle_thread_wa:00000000 .LANCHOR1
-     /tmp/ccohrN6T.s:146    .text.chSysTimerHandlerI:00000000 $t
-     /tmp/ccohrN6T.s:152    .text.chSysTimerHandlerI:00000000 chSysTimerHandlerI
-     /tmp/ccohrN6T.s:246    .text.chSysTimerHandlerI:00000060 $d
-     /tmp/ccohrN6T.s:272    .bss._idle_thread_wa:00000000 _idle_thread_wa
-     /tmp/ccohrN6T.s:254    .bss.mainthread.4816:00000000 $d
-     /tmp/ccohrN6T.s:258    .bss.mainthread.4816:00000000 mainthread.4816
-     /tmp/ccohrN6T.s:261    .rodata.str1.4:00000000 $d
-     /tmp/ccohrN6T.s:268    .bss._idle_thread_wa:00000000 $d
+     /tmp/ccS2o9LC.s:19     .text._idle_thread:00000000 $t
+     /tmp/ccS2o9LC.s:25     .text._idle_thread:00000000 _idle_thread
+     /tmp/ccS2o9LC.s:45     .text._idle_thread:0000000c $d
+     /tmp/ccS2o9LC.s:51     .text.chSysInit:00000000 $t
+     /tmp/ccS2o9LC.s:57     .text.chSysInit:00000000 chSysInit
+     /tmp/ccS2o9LC.s:255    .bss.mainthread.4816:00000000 .LANCHOR0
+     /tmp/ccS2o9LC.s:265    .rodata.str1.4:00000008 .LC1
+     /tmp/ccS2o9LC.s:269    .bss._idle_thread_wa:00000000 .LANCHOR1
+     /tmp/ccS2o9LC.s:146    .text.chSysTimerHandlerI:00000000 $t
+     /tmp/ccS2o9LC.s:152    .text.chSysTimerHandlerI:00000000 chSysTimerHandlerI
+     /tmp/ccS2o9LC.s:246    .text.chSysTimerHandlerI:00000060 $d
+     /tmp/ccS2o9LC.s:272    .bss._idle_thread_wa:00000000 _idle_thread_wa
+     /tmp/ccS2o9LC.s:254    .bss.mainthread.4816:00000000 $d
+     /tmp/ccS2o9LC.s:258    .bss.mainthread.4816:00000000 mainthread.4816
+     /tmp/ccS2o9LC.s:261    .rodata.str1.4:00000000 $d
+     /tmp/ccS2o9LC.s:268    .bss._idle_thread_wa:00000000 $d
                      .debug_frame:00000010 $d
-     /tmp/ccohrN6T.s:50     .text._idle_thread:00000014 $t
-     /tmp/ccohrN6T.s:253    .text.chSysTimerHandlerI:00000068 $t
+     /tmp/ccS2o9LC.s:50     .text._idle_thread:00000014 $t
+     /tmp/ccS2o9LC.s:253    .text.chSysTimerHandlerI:00000068 $t
 
 UNDEFINED SYMBOLS
 rlist

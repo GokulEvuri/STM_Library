@@ -14,8 +14,8 @@
 void myUSBinit(void);
 int isUsbActive(void);
 
-void send_data(void);
-uint8_t receive_data(void);
+void send_data(uint8_t transferBuf);
+uint8_t receive_data(uint8_t receiveBuf);
 
 
 #endif // USB_H_INCLUDED 

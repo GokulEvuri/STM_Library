@@ -15,8 +15,14 @@
  */
 
 /* uint8_t receiveBuf[OUT_PACKETSIZE]; */
-/* #define IN_MULT 1 */
-/* uint8_t transferBuf[IN_PACKETSIZE*IN_MULT]; */
+ #define IN_MULT 1
+ uint8_t transferBuf[IN_PACKETSIZE*IN_MULT]; 
+
+main(){
+  transferBuf = {0}
+
+  send_data(transferBuf);
+}
 
 USBDriver *  	usbp = &USBD1;
 uint8_t initUSB=0;

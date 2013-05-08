@@ -8,42 +8,19 @@
 #include "shell.h"
 #include "chprintf.h"
 
-#include "PWM/PWM.h"
-#include "ADC/ADC.h"
+
 #include "USB/USB.h"
-#include "Misc/Misc.h"
-#include "SPI/SPI.h"
-#include "msv/include/ir_protocol.h"
-#include "msv/include/RAZOR.h"
-#include "msv/include/razor_protocol.h"
+
+
+#include "test_stmUSB.h"
+
 
 /*
  * assert Shell Commands to functions
  */
 
 static const ShellCommand commands[] = {
-  {"mem", cmd_mem},
-  {"threads", cmd_threads},
-  {"measure", cmd_measure},
-  {"m", cmd_measure},
-  {"measureAnalog", cmd_measureA},
-  {"ma", cmd_measureA},
-  {"vref", cmd_Vref},
-  {"v", cmd_Vref},
-  {"temperature", cmd_Temperature},
-  {"te", cmd_Temperature},
-  {"measureDirect", cmd_measureDirect},
-  {"md", cmd_measureDirect},
-  {"measureContinuous", cmd_measureCont},
-  {"mc", cmd_measureCont},
-  {"readContinuousData", cmd_measureRead},
-  {"rd", cmd_measureRead},
-  {"stopContinuous", cmd_measureStop},
-  {"sc", cmd_measureStop},
-  {"printAccel", cmd_printAccel},
-  {"pa", cmd_printAccel},
   {"print", print},
-  {"rz", cmd_printDataFromRazor},
   {NULL, NULL}
 };
 
@@ -77,13 +54,6 @@ int main(void) {
    */
   halInit();
   chSysInit();
-
-  /*
-   * Activate custom stuff
-   */
-  mypwmInit();
-  myADCinit();
-  mySPIinit();
 
   /*
    * Activates the USB driver and then the USB bus pull-up on D+.

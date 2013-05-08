@@ -5,10 +5,6 @@
 
 #include "USB/USB.h"
 #include "USB/usbdescriptor.h"
-/*
- * Don't ask me, I have no idea what is done here...
- * I think most things are either self explanatory, well documented or not to be touched
- */
 
 /*
  * USB Driver structure.

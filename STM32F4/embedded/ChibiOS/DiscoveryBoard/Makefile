@@ -87,14 +87,8 @@ CSRC = $(PORTSRC) \
        $(CHIBIOS)/os/various/chprintf.c \
        $(CHIBIOS)/os/various/devices_lib/accel/lis302dl.c \
        main.c \
-       PWM/PWM.c \
-       ADC/ADC.c \
        USB/USB.c \
-       Misc/Misc.c \
-       SPI/SPI.c \
-       msv/src/ir_protocol.c \
-       msv/src/RAZOR.c \
-       msv/src/razor_protocol.c
+       test_stmUSB.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.

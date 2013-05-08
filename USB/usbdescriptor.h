@@ -43,11 +43,18 @@ static const USBDescriptor vcom_device_descriptor = {
 /*
  * Configuration Descriptor
  */
-//MaxPacketsize for Bulk Full-Speed is 0x40
-#define IN_PACKETSIZE  0x0040
-#define OUT_PACKETSIZE 0x0040
+//MaxPacketsize for Bulk Full-Speed is 0x4
+/* #define IN_PACKETSIZE  0x0040 // 64 = 0x0040  */
+/* #define OUT_PACKETSIZE 0x0040  */
+/* #define EP_IN 1 */
+/* #define EP_OUT 2 */
+
+#define IN_PACKETSIZE  0x0020 // 64 = 0x0040 
+#define OUT_PACKETSIZE 0x0010 // 
 #define EP_IN 1
 #define EP_OUT 2
+
+
 static const uint8_t vcom_configuration_descriptor_data[9+9+7+7] = {
   /* Configuration Descriptor.*/
   //9 Bytes
@@ -152,19 +159,6 @@ static const USBDescriptor vcom_strings[] = {
 };
 
 
-uint8_t receiveBuf[OUT_PACKETSIZE];
-#define IN_MULT 4
-uint8_t transferBuf[IN_PACKETSIZE*IN_MULT];
-
-USBDriver *  	usbp = &USBD1;
-uint8_t initUSB=0;
-uint8_t usbStatus = 0;
-
-void myUSBinit(void);
-int isUsbActive(void);
-
-void send_data(void);
-uint8_t receive_data(void);
 
 
 #endif // USBDESCRIPTOR_H_INCLUDED

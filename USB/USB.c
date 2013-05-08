@@ -14,15 +14,15 @@
  * USB Driver structure.
  */
 
-/* uint8_t receiveBuf[OUT_PACKETSIZE]; */
-/* #define IN_MULT 4 */
-/* uint8_t transferBuf[IN_PACKETSIZE*IN_MULT]; */
+uint8_t receiveBuf[OUT_PACKETSIZE];
+#define IN_MULT 1
+uint8_t transferBuf[IN_PACKETSIZE*IN_MULT];
 
-/* USBDriver *  	usbp = &USBD1; */
-/* uint8_t initUSB=0; */
-/* uint8_t usbStatus = 0; */
+USBDriver *  	usbp = &USBD1;
+uint8_t initUSB=0;
+uint8_t usbStatus = 0;
 
-//SerialUSBDriver SDU1;
+SerialUSBDriver SDU1;
 /*
  * data Transmitted Callback
  */
@@ -211,9 +211,11 @@ void myUSBinit(void){
 }
 
 
+
+
 void send_data(){
   usbStatus=1;  
-  if(initUSB){ 
+  if(initUSB){
     usbPrepareTransmit(usbp, EP_IN, transferBuf, sizeof transferBuf);
     chSysLock();
     usbStartTransmitI(usbp, EP_IN);
@@ -237,3 +239,22 @@ uint8_t receive_data(){
   initUSB=0;
   return 0;
 }
+
+
+/* void send_data(uint32_t buffer){ */
+  
+/*   uint8_t buf1 = buffer >> 24; */
+/*   uint8_t buf2 = buffer >> 16; */
+/*   uint8_t buf3 = buffer >> 8; */
+/*   uint8_t buf4 = buffer; */
+  
+  
+
+/* } */
+
+/* uint16_t receive_data(void){ */
+
+/*   uint8_t buf1; */
+/*   uint8_t buf2; */
+
+/* } */

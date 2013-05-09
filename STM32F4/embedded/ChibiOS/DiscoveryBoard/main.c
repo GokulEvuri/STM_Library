@@ -17,6 +17,8 @@
 #include "msv/include/RAZOR.h"
 #include "msv/include/protocol_byte.h"
 
+void send(BaseSequentialStream *chp, int argc, char *argv[]);
+
 void testfun(BaseSequentialStream *chp, int argc, char *argv[]){
     int *razorData2; 
     razorData2=getValues();
@@ -52,6 +54,7 @@ static const ShellCommand commands[] = {
   {"pa", cmd_printAccel},
   {"rz", cmd_printDataFromRazor},
   {"test", testfun},
+   {"send", send},
   {NULL, NULL}
 };
 
@@ -61,6 +64,24 @@ static const ShellCommand commands[] = {
  */
 
 #define SHELL_WA_SIZE   THD_WA_SIZE(2048)
+
+
+void send(BaseSequentialStream *chp, int argc, char *argv[]) {
+  
+  (void)argv;
+  
+  if (argc > 1 ) {
+    chSequentialStreamPut(chp,'f');// to send data
+    //chprintf(chp, "Usage: measure\r\n"); // To print the things
+    return;
+  }
+  
+  //  chprintf(chp, "out\r\n"); // to print things
+
+  chSequentialStreamPut(chp,'a');// to send data
+  
+}
+
 
 static const ShellConfig shell_cfg1 = {
   (BaseSequentialStream *)&SDU1,

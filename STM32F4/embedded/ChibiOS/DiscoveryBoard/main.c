@@ -14,9 +14,16 @@
 #include "USB/USB.h"
 #include "Misc/Misc.h"
 #include "SPI/SPI.h"
-#include "msv/include/ir_protocol.h"
 #include "msv/include/RAZOR.h"
 #include "msv/include/protocol_byte.h"
+
+void testfun(BaseSequentialStream *chp, int argc, char *argv[]){
+    int *razorData2; 
+    razorData2=getValues();
+    chprintf(chp,"Rz Data: %d\r\n", razorData2[3], razorData2[4]);
+    uint16_t receive = 3;
+    chprintf(chp,"Byte Data: %x\r\n", translate(receive,razorData2));
+}
 
 /*
  * assert Shell Commands to functions
@@ -43,8 +50,8 @@ static const ShellCommand commands[] = {
   {"sc", cmd_measureStop},
   {"printAccel", cmd_printAccel},
   {"pa", cmd_printAccel},
-  {"print", print},
   {"rz", cmd_printDataFromRazor},
+  {"test", testfun},
   {NULL, NULL}
 };
 
@@ -64,6 +71,7 @@ static const ShellConfig shell_cfg1 = {
  * Application entry point.
  */
 int main(void) {
+  
   /*
    * Shell thread
    */
@@ -85,6 +93,7 @@ int main(void) {
   mypwmInit();
   myADCinit();
   mySPIinit();
+  myRazorInit();
 
   /*
    * Activates the USB driver and then the USB bus pull-up on D+.
@@ -104,8 +113,6 @@ int main(void) {
       chThdRelease(shelltp);    /* Receivers memory of the previous shell.   */
       shelltp = NULL;           /* Triggers spawning of a new shell.        */
     }
-
     chThdSleepMilliseconds(1000);
   }
-
 }

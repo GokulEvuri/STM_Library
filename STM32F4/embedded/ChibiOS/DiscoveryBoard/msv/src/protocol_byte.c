@@ -41,7 +41,7 @@ uint32_t magnetometer(int razorData[12]){
     flag = 1;
   }
 
-  if(flag){
+  if(flag == 1){
     return encoded;
   }
   
@@ -117,7 +117,6 @@ uint32_t accelerometer(int razorData[12]){
 
 
 uint8_t ultrasonic(int value){
-  
   uint8_t byte;
   if(value <= 63){
     byte = value;
@@ -134,7 +133,6 @@ uint8_t ultrasonic(int value){
   }else{
     byte = 0;
   }
-  
   return byte;
 }
 uint32_t infrared(int ir1, int ir2, int ir3){
@@ -157,9 +155,9 @@ uint32_t translate(uint16_t receive, int razorData[12]){
     package |= infrared(16,8,7) << 4;
     break;
   case 2:
-    package |= ultrasonic(533) << 4;
-    package |= ultrasonic(233) << 12;
-    package |= ultrasonic(533) << 20;
+    package |= ultrasonic(630) << 4;
+    package |= ultrasonic(630) << 12;
+    package |= ultrasonic(630) << 20;
     break;
   case 3:
     package |= magnetometer(razorData);

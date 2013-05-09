@@ -110,6 +110,9 @@ void myRazorInit(void) {
                     NORMALPRIO + 10, Thread2, NULL);
 
 }
+int* getValues(void) {
+	return razorData;
+}
 
 
 

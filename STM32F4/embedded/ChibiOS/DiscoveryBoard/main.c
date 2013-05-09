@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #include "ch.h"
 #include "hal.h"
@@ -15,7 +16,7 @@
 #include "SPI/SPI.h"
 #include "msv/include/ir_protocol.h"
 #include "msv/include/RAZOR.h"
-#include "msv/include/razor_protocol.h"
+#include "msv/include/protocol_byte.h"
 
 /*
  * assert Shell Commands to functions
@@ -100,7 +101,7 @@ int main(void) {
         shelltp = shellCreate(&shell_cfg1, SHELL_WA_SIZE, NORMALPRIO);
       }
     else if (chThdTerminated(shelltp)) {
-      chThdRelease(shelltp);    /* Recovers memory of the previous shell.   */
+      chThdRelease(shelltp);    /* Receivers memory of the previous shell.   */
       shelltp = NULL;           /* Triggers spawning of a new shell.        */
     }
 

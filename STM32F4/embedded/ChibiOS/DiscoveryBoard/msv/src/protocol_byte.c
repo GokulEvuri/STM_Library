@@ -143,10 +143,10 @@ uint32_t infrared(int ir1, int ir2, int ir3){
   return byte;
 }
 
-uint32_t translate(uint16_t receive, int razorData[12]){
+void translate(uint16_t receive, int razorData[12], uint8_t data[4]){
   uint16_t request;
   uint32_t package = 0;
-
+ 
   request = receive & 0x000F;
   package |= request;
 
@@ -169,7 +169,11 @@ uint32_t translate(uint16_t receive, int razorData[12]){
     package |= accelerometer(razorData);
     break;
   }
-
   package |= TERM << 30;
-  return package;
+
+  data[0]= (package >> 24);
+  data[1]= (package >> 16) & 0xFF;
+  data[2]= (package >> 8) & 0xFF;
+  data[3]= package & 0xFF;
+  return data;
 }

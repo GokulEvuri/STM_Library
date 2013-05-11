@@ -17,20 +17,11 @@
 #include "msv/include/RAZOR.h"
 #include "msv/include/protocol_byte.h"
 
-void send(BaseSequentialStream *chp, int argc, char *argv[]);
-
-void testfun(BaseSequentialStream *chp, int argc, char *argv[]){
-    int *razorData2; 
-    razorData2=getValues();
-    chprintf(chp,"Rz Data: %d\r\n", razorData2[3], razorData2[4]);
-    uint16_t receive = 3;
-    chprintf(chp,"Byte Data: %x\r\n", translate(receive,razorData2));
-}
+void testProtocol(BaseSequentialStream *chp, int argc, char *argv[]);
 
 /*
- * assert Shell Commands to functions
- */
-
+* assert Shell Commands to functions
+*/
 static const ShellCommand commands[] = {
   {"mem", cmd_mem},
   {"threads", cmd_threads},
@@ -53,44 +44,20 @@ static const ShellCommand commands[] = {
   {"printAccel", cmd_printAccel},
   {"pa", cmd_printAccel},
   {"rz", cmd_printDataFromRazor},
-  {"test", testfun},
-   {"send", send},
+  {"test", testProtocol},
   {NULL, NULL}
 };
 
-
-/*
- * Shell configuration
- */
-
-#define SHELL_WA_SIZE   THD_WA_SIZE(2048)
-
-
-void send(BaseSequentialStream *chp, int argc, char *argv[]) {
-  
-  (void)argv;
-  
-  if (argc > 1 ) {
-    chSequentialStreamPut(chp,'f');// to send data
-    //chprintf(chp, "Usage: measure\r\n"); // To print the things
-    return;
-  }
-  
-  //  chprintf(chp, "out\r\n"); // to print things
-
-  chSequentialStreamPut(chp,'a');// to send data
-  
-}
-
-
-static const ShellConfig shell_cfg1 = {
-  (BaseSequentialStream *)&SDU1,
-  commands
+const SerialConfig portConfig2 = {
+    115000,
+    0,
+    USART_CR2_STOP1_BITS | USART_CR2_LINEN,
+    USART_CR3_CTSE
 };
 
 /*
- * Application entry point.
- */
+* Application entry point.
+*/
 int main(void) {
   
   /*
@@ -107,33 +74,46 @@ int main(void) {
    */
   halInit();
   chSysInit();
-
   /*
    * Activate custom stuff
    */
-  mypwmInit();
+  /*mypwmInit();
   myADCinit();
   mySPIinit();
-  myRazorInit();
+  myRazorInit();*/
 
   /*
    * Activates the USB driver and then the USB bus pull-up on D+.
    */
   myUSBinit();
 
-
+  sdStart(&SDU1,&portConfig2);
+  uint8_t receivedBuff[2];
+  uint8_t data[4];
   /*
    * Main loop, does nothing except spawn a shell when the old one was terminated
    */
+
   while (TRUE) {
-    if (!shelltp && isUsbActive())
-      {
-        shelltp = shellCreate(&shell_cfg1, SHELL_WA_SIZE, NORMALPRIO);
-      }
-    else if (chThdTerminated(shelltp)) {
-      chThdRelease(shelltp);    /* Receivers memory of the previous shell.   */
-      shelltp = NULL;           /* Triggers spawning of a new shell.        */
-    }
-    chThdSleepMilliseconds(1000);
+    sdRead(&SDU1, receivedBuff, 4);
+    uint16_t receivedByte= (uint16_t)atol(receivedBuff);
+    translate(receivedByte,razorData,data);
+    sdWrite(&SDU1, data, 4);
+
+    //sleep for a while
+    chThdSleepMilliseconds(10);
   }
+}
+
+void testProtocol(BaseSequentialStream *chp, int argc, char *argv[]){
+    int *razorData2, i; 
+    uint8_t data[4];
+    razorData2=getValues();
+    chprintf(chp,"Rz Data: %d\r\n", razorData2[3], razorData2[4]);
+    uint16_t receive = 2;
+    translate(receive,razorData2,data);
+    chprintf(chp,"Byte Data: ");
+    for(i = 0; i<4; i++)
+    chprintf(chp,"%x", data[i]);
+    chprintf(chp,"\r\n");
 }

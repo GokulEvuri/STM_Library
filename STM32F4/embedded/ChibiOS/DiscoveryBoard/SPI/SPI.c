@@ -64,6 +64,11 @@ void cmd_printAccel(BaseSequentialStream *chp, int argc, char *argv[]) {
   chprintf(chp, "\r\n");
 }
 
+void getAccel(int8_t accelData[2]) {
+   accelData[0] = accel_x[4];
+   accelData[1] = accel_y[4];
+}
+
 /*
  * This is a periodic thread that reads accelerometer.
  */

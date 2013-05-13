@@ -29,6 +29,7 @@ uint32_t yaw(int razorData[12]){
   
   return encoded;
 }
+
 uint32_t magnetometer(int razorData[12]){
   uint32_t encoded = 0;
   uint8_t flag = 0;
@@ -54,7 +55,7 @@ uint32_t magnetometer(int razorData[12]){
   
   encoded |= razorData[3];
   encoded |= razorData[4] << 9;
-  //encoded |= yaw(razorData) << 18;
+
   return encoded;
 }
 
@@ -81,12 +82,13 @@ uint32_t gyroscope(int razorData[12]){
     encoded |= 0x0100 << 9;
   }
   
-  encoded |= razorData[6] << 9;
-  encoded |= razorData[7] << 18;
+  encoded |= razorData[6];
+  encoded |= razorData[7] << 9;
   
   return encoded;
 }
-uint32_t accelerometer(int razorData[12]){
+
+uint32_t accelerometer_razor(int razorData[12]){
   uint32_t encoded = 0;
   uint8_t flag = 0;
   if(razorData[9] < -250 || razorData[9] > 250){
@@ -109,12 +111,40 @@ uint32_t accelerometer(int razorData[12]){
     encoded |= 0x0100 << 9;
   }
   
-  encoded |= razorData[9] << 9;
-  encoded |= razorData[10] << 18;
+  encoded |= razorData[9];
+  encoded |= razorData[10] << 9;
   
   return encoded;
 }
 
+uint32_t accelerometer_discovery(int8_t discoveryData[2]){
+  uint32_t encoded = 0;
+  uint8_t flag = 0;
+  if(discoveryData[0] < -250 || discoveryData[0] > 250){
+    encoded |= 0x0100;
+    flag = 1;
+  }
+  if(discoveryData[1] < -250 || discoveryData[1] > 250){
+    encoded |= 0x0100 << 9;
+    flag = 1;
+  }
+
+  if(flag){
+    return encoded;
+  }
+  
+  if(discoveryData[9] < 0){
+    encoded |= 0x0100;
+  }
+  if(discoveryData[10] < 0){
+    encoded |= 0x0100 << 9;
+  }
+  
+  encoded |= discoveryData[0];
+  encoded |= discoveryData[1] << 9;
+
+  return encoded;
+}
 
 uint8_t ultrasonic(int value){
   uint8_t byte;
@@ -143,13 +173,13 @@ uint32_t infrared(int ir1, int ir2, int ir3){
   return byte;
 }
 
-void translate(uint16_t receive, int razorData[12], uint8_t data[4]){
+void translate(uint16_t receive, int razorData[12],int8_t discoveryAccelData[2],uint8_t data[4]){ 
   uint16_t request;
   uint32_t package = 0;
  
   request = receive & 0x000F;
   package |= request;
-
+  
   switch(request){
   case 1:
     package |= infrared(16,8,7) << 4;
@@ -159,14 +189,20 @@ void translate(uint16_t receive, int razorData[12], uint8_t data[4]){
     package |= ultrasonic(630) << 12;
     package |= ultrasonic(630) << 20;
     break;
-  case 3:
-    package |= magnetometer(razorData);
+  case 3: 
+    package |= yaw(razorData);
     break;
   case 4:
-    package |= gyroscope(razorData);
+    package |= magnetometer(razorData);
     break;
   case 5:
-    package |= accelerometer(razorData);
+    package |= gyroscope(razorData);
+    break;
+  case 6:
+    package |= accelerometer_razor(razorData);
+    break;
+  case 7:
+    package |= accelerometer_discovery(discoveryAccelData);
     break;
   }
   package |= TERM << 30;
@@ -175,5 +211,4 @@ void translate(uint16_t receive, int razorData[12], uint8_t data[4]){
   data[1]= (package >> 16) & 0xFF;
   data[2]= (package >> 8) & 0xFF;
   data[3]= package & 0xFF;
-  return data;
 }

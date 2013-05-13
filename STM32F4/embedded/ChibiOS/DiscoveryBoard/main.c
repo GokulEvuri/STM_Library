@@ -60,8 +60,6 @@ const SerialConfig portConfig2 = {
 * Application entry point.
 */
 int main(void) {
-  int speed, steering;
- 
   /*
    * Shell thread
    */
@@ -76,14 +74,14 @@ int main(void) {
    */
   halInit();
   chSysInit();
-  motorInit();
+ // motorInit();
   /*
-   * Activate custom stuff
+   * Activate custom stuff 
    */
   /*mypwmInit();
   myADCinit();
   mySPIinit();
-  myRazorInit();*/
+  myRazorInit();*/ 
 
   /*
    * Activates the USB driver and then the USB bus pull-up on D+.
@@ -91,33 +89,38 @@ int main(void) {
   myUSBinit();
 
   sdStart(&SDU1,&portConfig2);
-  uint8_t receivedBuff[2];
-  uint8_t data[4];
+  int8_t accelData[2];  // Discovery Board's Accelerometer
+  uint8_t receivedBuff[2]; // Received Information from PandaBoard
+  uint8_t sentData[4];  // Returned Information to the PandaBoard
+  
   /*
    * Main loop, does nothing except spawn a shell when the old one was terminated
    */
 
   while (TRUE) {
-  /*  sdRead(&SDU1, receivedBuff, 4);
-    uint16_t receivedByte= (uint16_t)atol(receivedBuff);
-    translate(receivedByte,razorData,data);
-    sdWrite(&SDU1, data, 4);*/
-    setMotorData(-250,1490);
-
+    sdRead(&SDU1, receivedBuff, 4);
+    uint16_t receivedByte = (uint16_t)atol(receivedBuff);
+    getAccel(accelData);
+    translate(receivedByte,razorData,accelData,sentData);
+    sdWrite(&SDU1, sentData, 4);
+    //setMotorData((receivedByte >> 4) & 0x3F,(receivedByte >> 4) & 0x3F);
+   
     //sleep for a while
     chThdSleepMilliseconds(10);
   }
 }
 
-void testProtocol(BaseSequentialStream *chp, int argc, char *argv[]){
+/*void testProtocol(BaseSequentialStream *chp, int argc, char *argv[]){
     int *razorData2, i; 
     uint8_t data[4];
+    int8_t accelData[2];
     razorData2=getValues();
     chprintf(chp,"Rz Data: %d\r\n", razorData2[3], razorData2[4]);
     uint16_t receive = 2;
-    translate(receive,razorData2,data);
+    getAccel(accelData);
+    translate(receive,razorData2, accelData,data);
     chprintf(chp,"Byte Data: ");
     for(i = 0; i<4; i++)
     chprintf(chp,"%x", data[i]);
     chprintf(chp,"\r\n");
-}
+}*/

@@ -16,6 +16,7 @@
 #include "SPI/SPI.h"
 #include "msv/include/RAZOR.h"
 #include "msv/include/protocol_byte.h"
+#include "msv/include/motor.h"
 
 void testProtocol(BaseSequentialStream *chp, int argc, char *argv[]);
 
@@ -59,7 +60,8 @@ const SerialConfig portConfig2 = {
 * Application entry point.
 */
 int main(void) {
-  
+  int speed, steering;
+ 
   /*
    * Shell thread
    */
@@ -74,6 +76,7 @@ int main(void) {
    */
   halInit();
   chSysInit();
+  motorInit();
   /*
    * Activate custom stuff
    */
@@ -95,10 +98,11 @@ int main(void) {
    */
 
   while (TRUE) {
-    sdRead(&SDU1, receivedBuff, 4);
+  /*  sdRead(&SDU1, receivedBuff, 4);
     uint16_t receivedByte= (uint16_t)atol(receivedBuff);
     translate(receivedByte,razorData,data);
-    sdWrite(&SDU1, data, 4);
+    sdWrite(&SDU1, data, 4);*/
+    setMotorData(-250,1490);
 
     //sleep for a while
     chThdSleepMilliseconds(10);

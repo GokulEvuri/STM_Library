@@ -182,7 +182,7 @@ void translate(uint16_t receive, int razorData[12],int8_t discoveryAccelData[2],
   
   switch(request){
   case 1:
-    package |= infrared(16,8,7) << 4;
+    package |= infrared(31,31,31) << 4;
     break;
   case 2:
     package |= ultrasonic(630) << 4;
@@ -190,19 +190,19 @@ void translate(uint16_t receive, int razorData[12],int8_t discoveryAccelData[2],
     package |= ultrasonic(630) << 20;
     break;
   case 3: 
-    package |= yaw(razorData);
+    package |= yaw(razorData) << 4;
     break;
   case 4:
-    package |= magnetometer(razorData);
+    package |= magnetometer(razorData) << 4;
     break;
   case 5:
-    package |= gyroscope(razorData);
+    package |= gyroscope(razorData) << 4;
     break;
   case 6:
-    package |= accelerometer_razor(razorData);
+    package |= accelerometer_razor(razorData) << 4;
     break;
   case 7:
-    package |= accelerometer_discovery(discoveryAccelData);
+    package |= accelerometer_discovery(discoveryAccelData) << 4;
     break;
   }
   package |= TERM << 30;

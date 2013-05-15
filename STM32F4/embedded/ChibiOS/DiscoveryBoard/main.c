@@ -17,6 +17,7 @@
 #include "msv/include/RAZOR.h"
 #include "msv/include/protocol_byte.h"
 #include "msv/include/motor.h"
+#include "msv/include/ultrasonic.h"
 
 void testProtocol(BaseSequentialStream *chp, int argc, char *argv[]);
 
@@ -74,35 +75,61 @@ int main(void) {
    */
   halInit();
   chSysInit();
- // motorInit();
+  //mySPIinit();
+ // motorInit(); 
   /*
    * Activate custom stuff 
    */
   /*mypwmInit();
-  myADCinit();
-  mySPIinit();
-  myRazorInit();*/ 
+  myADCinit();*/
+  myRazorInit();
 
   /*
    * Activates the USB driver and then the USB bus pull-up on D+.
-   */
+   */ 
   myUSBinit();
 
   sdStart(&SDU1,&portConfig2);
   int8_t accelData[2];  // Discovery Board's Accelerometer
   uint8_t receivedBuff[2]; // Received Information from PandaBoard
   uint8_t sentData[4];  // Returned Information to the PandaBoard
-  
+  int *razorInfo;
   /*
    * Main loop, does nothing except spawn a shell when the old one was terminated
    */
 
   while (TRUE) {
     sdRead(&SDU1, receivedBuff, 4);
-    uint16_t receivedByte = (uint16_t)atol(receivedBuff);
+    uint16_t receivedByte = (uint16_t)atol(receivedBuff);\
     getAccel(accelData);
-    translate(receivedByte,razorData,accelData,sentData);
-    sdWrite(&SDU1, sentData, 4);
+    razorInfo = getValues();
+    if((receivedByte & 0x000F) == 8){
+        translate(0x03,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+	translate(0x04,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+        translate(0x05,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+        translate(0x06,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+    }
+    if((receivedByte & 0x000F) == 9){
+       translate(0x03,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+	translate(0x04,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+        translate(0x05,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+        translate(0x06,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+        translate(0x07,razorInfo,accelData,sentData);
+        sdWrite(&SDU1, sentData, 4);
+    }
+    
+    else{
+    	translate(receivedByte,razorInfo,accelData,sentData);
+    	sdWrite(&SDU1, sentData, 4);
+    }
     //setMotorData((receivedByte >> 4) & 0x3F,(receivedByte >> 4) & 0x3F);
    
     //sleep for a while

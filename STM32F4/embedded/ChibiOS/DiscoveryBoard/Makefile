@@ -93,6 +93,7 @@ CSRC = $(PORTSRC) \
        Misc/Misc.c \
        SPI/SPI.c \
        msv/src/motor.c \
+       msv/src/ultrasonic.c \
        msv/src/RAZOR.c \
        msv/src/protocol_byte.c
 

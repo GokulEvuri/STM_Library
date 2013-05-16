@@ -18,6 +18,7 @@
 #include "msv/include/protocol_byte.h"
 #include "msv/include/motor.h"
 #include "msv/include/ultrasonic.h"
+#include "msv/include/IMU.h"
 
 void testProtocol(BaseSequentialStream *chp, int argc, char *argv[]);
 
@@ -82,10 +83,11 @@ int main(void) {
    */
   /*mypwmInit();
   myADCinit();*/
+  //initIMU();
   myRazorInit();
 
   /*
-   * Activates the USB driver and then the USB bus pull-up on D+.
+   * Activates he USB driver and then the USB bus pull-up on D+.
    */ 
   myUSBinit();
 
@@ -103,6 +105,9 @@ int main(void) {
     uint16_t receivedByte = (uint16_t)atol(receivedBuff);\
     getAccel(accelData);
     razorInfo = getValues();
+    //calculateOrientation(razorInfo);
+
+
     if((receivedByte & 0x000F) == 8){
         translate(0x03,razorInfo,accelData,sentData);
         sdWrite(&SDU1, sentData, 4);

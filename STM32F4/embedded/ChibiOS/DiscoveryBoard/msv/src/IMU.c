@@ -174,3 +174,15 @@ void initIMU() {
     tmObjectInit(&orientationTimer);
     tmObjectInit(&speedTimer);
 }
+
+float* getImuValues(void){
+   float values [7];
+   values[0] = orientationZ_rad;
+   values[1] = positionX;
+   values[2] = positionY;
+   values[3] = relTravelledPath;
+   values[4] = absTravelledPath;
+   values[5] = velocityX;
+   values[6] = velocityY;
+   return values;
+}

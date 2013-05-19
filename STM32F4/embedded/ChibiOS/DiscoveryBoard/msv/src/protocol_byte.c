@@ -13,9 +13,16 @@
  * Accelerometer: [9] = X     [10] = Y      [11] = Z
  */
 
+int round(float num){
+  if((num + 0.5) >= ((int)(num) + 1))
+    return ((int)(num)+1);
+  else
+    return ((int)(num));
+}
 
 uint32_t yaw(int razorData[12]){
   uint32_t encoded = 0;
+
   if(razorData[0] < -180 || razorData[0] > 180){
     encoded |= 0x0100;
     return encoded;
@@ -32,20 +39,11 @@ uint32_t yaw(int razorData[12]){
 
 uint32_t magnetometer(int razorData[12]){
   uint32_t encoded = 0;
-  uint8_t flag = 0;
-  if(razorData[3] < -250 || razorData[3] > 250){
+  if(razorData[3] < -250 || razorData[3] > 250 || razorData[4] < -250 || razorData[4] > 250){
     encoded |= 0x0100;
-    flag = 1;
-  }
-  if(razorData[4] < -250 || razorData[4] > 250){
-    encoded |= 0x0100 << 9;
-    flag = 1;
-  }
-
-  if(flag == 1){
     return encoded;
   }
-  
+
   if(razorData[3] < 0){
     encoded |= 0x0100;
   }
@@ -61,17 +59,8 @@ uint32_t magnetometer(int razorData[12]){
 
 uint32_t gyroscope(int razorData[12]){
   uint32_t encoded = 0;
-  uint8_t flag = 0;
-  if(razorData[6] < -250 || razorData[6] > 250){
+  if(razorData[6] < -250 || razorData[6] > 250 || razorData[7] < -250 || razorData[7] > 250){
     encoded |= 0x0100;
-    flag = 1;
-  }
-  if(razorData[7] < -250 || razorData[7] > 250){
-    encoded |= 0x0100 << 9;
-    flag = 1;
-  }
-
-  if(flag){
     return encoded;
   }
   
@@ -90,20 +79,12 @@ uint32_t gyroscope(int razorData[12]){
 
 uint32_t accelerometer_razor(int razorData[12]){
   uint32_t encoded = 0;
-  uint8_t flag = 0;
-  if(razorData[9] < -250 || razorData[9] > 250){
-    encoded |= 0x0100;
-    flag = 1;
-  }
-  if(razorData[10] < -250 || razorData[10] > 250){
-    encoded |= 0x0100 << 9;
-    flag = 1;
-  }
 
-  if(flag){
+  if(razorData[9] < -250 || razorData[9] > 250 || razorData[10] < -250 || razorData[10] > 250){
+    encoded |= 0x0100;
     return encoded;
   }
-  
+
   if(razorData[9] < 0){
     encoded |= 0x0100;
   }
@@ -119,17 +100,9 @@ uint32_t accelerometer_razor(int razorData[12]){
 
 uint32_t accelerometer_discovery(int8_t discoveryData[2]){
   uint32_t encoded = 0;
-  uint8_t flag = 0;
-  if(discoveryData[0] < -250 || discoveryData[0] > 250){
-    encoded |= 0x0100;
-    flag = 1;
-  }
-  if(discoveryData[1] < -250 || discoveryData[1] > 250){
-    encoded |= 0x0100 << 9;
-    flag = 1;
-  }
 
-  if(flag){
+  if(discoveryData[0] < -250 || discoveryData[0] > 250 || discoveryData[1] < -250 || discoveryData[1] > 250){
+    encoded |= 0x0100;
     return encoded;
   }
   
@@ -147,33 +120,92 @@ uint32_t accelerometer_discovery(int8_t discoveryData[2]){
 }
 
 uint8_t ultrasonic(int value){
-  uint8_t byte;
+  uint8_t encoded;
   if(value <= 63){
-    byte = value;
+    encoded = value;
   }else if(value <= 189){
-    byte = value / 3;
-    byte |= 1 << 6;
+    encoded = value / 3;
+    encoded |= 1 << 6;
   }else if(value <= 315){
-    byte = value / 5;
-    byte |= 1 << 7;
+    encoded = value / 5;
+    encoded |= 1 << 7;
   }else if(value <= 630){
-    byte = value / 10;
-    byte |= 1 << 6;
-    byte |= 1 << 7;
+    encoded = value / 10;
+    encoded |= 1 << 6;
+    encoded |= 1 << 7;
   }else{
-    byte = 0;
+    encoded = 0;
   }
-  return byte;
+  return encoded;
 }
 uint32_t infrared(int ir1, int ir2, int ir3){
-  uint32_t byte = 0;
-  byte |= ir1;
-  byte |= ir2 << 5;
-  byte |= ir3 << 10;
-  return byte;
+  uint32_t encoded = 0;
+  encoded |= ir1;
+  encoded |= ir2 << 5;
+  encoded |= ir3 << 10;
+  return encoded;
 }
 
-void translate(uint16_t receive, int razorData[12],int8_t discoveryAccelData[2],uint8_t data[4]){ 
+uint32_t currentPos(float imuInfo[7]){
+  uint32_t encoded = 0;
+
+  if(imuInfo[1] < -2500 || imuInfo[1] > 2500 || imuInfo[2] < -2500 || imuInfo[2] > 2500){
+    encoded |= 0x1000;
+    return encoded;
+  }
+  
+  if(imuInfo[1] < 0){
+    encoded |= 0x1000;
+  }
+  if(imuInfo[2] < 0){
+    encoded |= 0x1000 << 13;
+  }
+  
+  encoded |= (int)(imuInfo[1]*100);
+  encoded |= (int)(imuInfo[2]*100) << 13;
+
+  return encoded;
+}
+
+uint32_t traveled_path(float imuInfo[7]){
+  uint32_t encoded = 0;
+  
+  encoded |= (int)(imuInfo[3]*100);
+  encoded |= (int)(imuInfo[4]*100) << 6;
+ 
+  return encoded;
+}
+
+uint32_t current_velocity(float imuInfo[7]){
+  uint32_t encoded = 0;
+
+  if(imuInfo[5] < -511 || imuInfo[5] > 511 || imuInfo[6] < -511 || imuInfo[6] > 511){
+    encoded |= 0x0200;
+    return encoded;
+  }
+  
+  if(imuInfo[5] < 0){
+    encoded |= 0x0200;
+  }
+  if(imuInfo[6] < 0){
+    encoded |= 0x1000 << 10;
+  }
+  
+  encoded |= (int)(imuInfo[5]);
+  encoded |= (int)(imuInfo[6]) << 10;
+
+  return encoded;
+}
+
+uint32_t current_orientation(float imuInfo[7]){
+  uint32_t encoded = 0;
+
+  encoded |=  round((imuInfo[7]/180)*1000);
+  
+  return encoded;
+}
+
+void translate(uint16_t receive, int razorData[12], float imuInfo[7], int8_t discoveryAccelData[2], uint8_t data[4]){ 
   uint16_t request;
   uint32_t package = 0;
  
@@ -203,6 +235,18 @@ void translate(uint16_t receive, int razorData[12],int8_t discoveryAccelData[2],
     break;
   case 7:
     package |= accelerometer_discovery(discoveryAccelData) << 4;
+    break;
+  case 10:
+    package |= currentPos(imuInfo) << 4;
+    break;
+  case 11:
+    package |= traveled_path(imuInfo) << 4;
+    break;
+  case 12:
+    package |= current_velocity(imuInfo) << 4;
+    break;
+  case 13:
+    package |= current_orientation(imuInfo) << 4;
     break;
   }
   package |= TERM << 30;

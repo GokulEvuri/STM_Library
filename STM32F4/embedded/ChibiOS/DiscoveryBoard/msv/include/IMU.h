@@ -75,4 +75,6 @@ void calculateOrientation(const int *razorDataPtr);
  */
 void updatePosition(const int *speedPtr);
 
+float* getImuValues(void);
+
 #endif // IMU_H_INCLUDED

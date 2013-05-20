@@ -98,7 +98,7 @@ void normalizeAngleDEG(float *anglePtr) {
  * @param dT Time that has passed in milliseconds.
  */
 void calculateOrientation_complementaryFilters(const int *razorDataPtr, float dT) {
-    chMtxLock(&razorDataMutex);
+   // chMtxLock(&razorDataMutex);
     {
         const int *gyroXrate = (const int*)razorDataPtr[6];
         const int *gyroYrate = (const int*)razorDataPtr[7];
@@ -118,7 +118,7 @@ void calculateOrientation_complementaryFilters(const int *razorDataPtr, float dT
         normalizeAngleDEG(&orientationY);
         normalizeAngleDEG(&orientationZ);
     }
-    chMtxUnlock();
+    //chMtxUnlock();
 
     chMtxLock(&vehicleDataMutex);
     {
@@ -158,7 +158,7 @@ static msg_t imoThread(void *arg) {
    // razorInfo = getRazorValues();
     
     updatePosition(&speed);
-   // calculateOrientation(razorData);
+    calculateOrientation(razorData);
     //sleep for a while
     chThdSleepMilliseconds(10);
   }
@@ -186,7 +186,7 @@ void initIMU() {
     velocityX = 0;
     velocityY = 0;
 
-    chMtxInit(&razorDataMutex);
+   // chMtxInit(&razorDataMutex);
     chMtxInit(&vehicleDataMutex);
 
     tmObjectInit(&orientationTimer);

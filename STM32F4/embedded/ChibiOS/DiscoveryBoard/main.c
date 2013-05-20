@@ -122,7 +122,7 @@ int main(void) {
    * Activates the USB driver and then the USB bus pull-up on D+.
    */
   
-  //myRazorInit();
+  myRazorInit();
   myUSBinit();
 
   /*

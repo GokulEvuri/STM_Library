@@ -4,6 +4,7 @@
 #include "string.h"
 #include "chprintf.h"
 #include "msv/include/RAZOR.h"
+#include "msv/include/IMU.h"
 
 char word[64]; //has to be here
 
@@ -65,6 +66,7 @@ static msg_t Thread2(void *arg) {
   // Reader thread loop.
   while (TRUE) {
       	int j=0,i=0;
+        int* speed; 
 	uint8_t buf[64];
 	int z=0,x;
 	//empty word from junk
@@ -74,6 +76,7 @@ static msg_t Thread2(void *arg) {
 	//read serail port
 	sdRead(&SD3, buf, 64);
 	i=0;
+        speed = 1;
 	while(TRUE)
 	{		
 		//find begin of sentance send from razor board 		
@@ -88,6 +91,7 @@ static msg_t Thread2(void *arg) {
 			//send word to phrase mechanism
 			phrase(word);
 			break;
+			
 		}
 		//in case if it is not a real sentance from razor board
 		if (i >=63) break;
@@ -100,6 +104,7 @@ static msg_t Thread2(void *arg) {
 }
 
 void myRazorInit(void) {
+   
   //start serial mode
   sdStart(&SD3,&portConfig);
   //configure ports to use serial protocol
@@ -110,10 +115,6 @@ void myRazorInit(void) {
                     NORMALPRIO + 10, Thread2, NULL);
 
 }
-int* getValues(void) {
+int* getRazorValues(void) {
 	return razorData;
 }
-
-
-
-

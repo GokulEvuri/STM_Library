@@ -4,13 +4,14 @@
  * This software is open source. Please see COPYING and AUTHORS for further information.
  */
 
-#include <math.h>
+#include "math.h"
 
 #include "ch.h"
 #include "hal.h"
 #include "tm.h"
 
 #include "msv/include/IMU.h"
+#include "msv/include/RAZOR.h"
 
 #define ORIENTATION_X_WEIGHT_COMPLEMENT (1.0 - ORIENTATION_X_WEIGHT)
 #define ORIENTATION_Y_WEIGHT_COMPLEMENT (1.0 - ORIENTATION_Y_WEIGHT)
@@ -146,6 +147,23 @@ void calculateOrientation(const int *razorDataPtr) {
     }
 }
 
+static WORKING_AREA(imoThreadArea, 128);
+static msg_t imoThread(void *arg) {
+  int* razorInfo;
+  int speed = 1;
+  (void)arg;
+  chRegSetThreadName("imuThread");
+  // Reader thread loop.
+  while (TRUE) {
+   // razorInfo = getRazorValues();
+    
+    updatePosition(&speed);
+   // calculateOrientation(razorData);
+    //sleep for a while
+    chThdSleepMilliseconds(10);
+  }
+  return (msg_t)0;
+}
 
 void initIMU() {
     firstCallCalculateOrientation = 1;
@@ -173,10 +191,10 @@ void initIMU() {
 
     tmObjectInit(&orientationTimer);
     tmObjectInit(&speedTimer);
+    chThdCreateStatic(imoThreadArea, sizeof(imoThreadArea),NORMALPRIO + 10, imoThread, NULL);
 }
 
 float* getImuValues(void){
-   float values [7];
    values[0] = orientationZ_rad;
    values[1] = positionX;
    values[2] = positionY;

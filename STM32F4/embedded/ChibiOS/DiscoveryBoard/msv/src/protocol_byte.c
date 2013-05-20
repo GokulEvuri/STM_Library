@@ -170,8 +170,8 @@ uint32_t currentPos(float imuInfo[7]){
 uint32_t traveled_path(float imuInfo[7]){
   uint32_t encoded = 0;
   
-  encoded |= (int)(imuInfo[3]*100);
-  encoded |= (int)(imuInfo[4]*100) << 6;
+  encoded |= (int)((imuInfo[3]/2)*100);
+  encoded |= (int)((imuInfo[4]/2)*100) << 6;
  
   return encoded;
 }

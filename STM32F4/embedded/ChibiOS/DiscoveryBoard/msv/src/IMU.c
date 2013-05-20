@@ -32,7 +32,7 @@ static TimeMeasurement speedTimer; // Data structure for time measurements for t
  * @param dT Time that has passed in milliseconds.
  */
 void updatePosition_dT(const int *speedPtr, float dT) {
-    chMtxLock(&vehicleDataMutex);
+ //   chMtxLock(&vehicleDataMutex);
     {
         const float cosZ = cos(orientationZ);
         const float sinZ = sin(orientationZ);
@@ -51,7 +51,7 @@ void updatePosition_dT(const int *speedPtr, float dT) {
         velocityX = cosZ * (*speedPtr);
         velocityY = sinZ * (*speedPtr);
     }
-    chMtxUnlock();
+ //   chMtxUnlock();
 }
 
 
@@ -98,7 +98,7 @@ void normalizeAngleDEG(float *anglePtr) {
  * @param dT Time that has passed in milliseconds.
  */
 void calculateOrientation_complementaryFilters(const int *razorDataPtr, float dT) {
-   // chMtxLock(&razorDataMutex);
+    chMtxLock(&razorDataMutex);
     {
         const int *gyroXrate = (const int*)razorDataPtr[6];
         const int *gyroYrate = (const int*)razorDataPtr[7];
@@ -114,25 +114,26 @@ void calculateOrientation_complementaryFilters(const int *razorDataPtr, float dT
         orientationZ = (ORIENTATION_Z_WEIGHT * (orientationZ + (*gyroZrate * dT / 1000.0))) + (ORIENTATION_Z_WEIGHT_COMPLEMENT * (*accZangle));
 
         // Restrict orientation to 0..360 degree:
+       
         normalizeAngleDEG(&orientationX);
         normalizeAngleDEG(&orientationY);
         normalizeAngleDEG(&orientationZ);
     }
-    //chMtxUnlock();
-
-    chMtxLock(&vehicleDataMutex);
-    {
-        orientationX_rad = orientationX * DEG2RAD;
-        orientationY_rad = orientationY * DEG2RAD;
-        orientationZ_rad = orientationZ * DEG2RAD;
-    }
     chMtxUnlock();
+
+   // chMtxLock(&vehicleDataMutex);
+  //  {
+        orientationX_rad = orientationX;
+        orientationY_rad = orientationY;
+        orientationZ_rad = orientationZ;
+  //  }
+  //  chMtxUnlock();
 }
 
 
 void calculateOrientation(const int *razorDataPtr) {
     if (firstCallCalculateOrientation == 0) {
-        tmStopMeasurement(&orientationTimer);
+        tmStopMeasurement(&orientationTimer); 
 
         // Calculate the time that has passed since last call.
         float dT = RTT2MS(orientationTimer.last);
@@ -149,16 +150,16 @@ void calculateOrientation(const int *razorDataPtr) {
 
 static WORKING_AREA(imoThreadArea, 128);
 static msg_t imoThread(void *arg) {
-  int* razorInfo;
+  //int* razorInfo = {0,0,0,0,0,0,0,0,0,0,0,0};
   int speed = 1;
   (void)arg;
   chRegSetThreadName("imuThread");
   // Reader thread loop.
   while (TRUE) {
-   // razorInfo = getRazorValues();
     
-    updatePosition(&speed);
     calculateOrientation(razorData);
+    chThdSleepMilliseconds(10);
+    updatePosition(&speed);
     //sleep for a while
     chThdSleepMilliseconds(10);
   }
@@ -186,7 +187,7 @@ void initIMU() {
     velocityX = 0;
     velocityY = 0;
 
-   // chMtxInit(&razorDataMutex);
+    chMtxInit(&razorDataMutex);
     chMtxInit(&vehicleDataMutex);
 
     tmObjectInit(&orientationTimer);
@@ -194,13 +195,13 @@ void initIMU() {
     chThdCreateStatic(imoThreadArea, sizeof(imoThreadArea),NORMALPRIO + 10, imoThread, NULL);
 }
 
-float* getImuValues(void){
-   values[0] = orientationZ_rad;
+void getImuValues(float values[7]){
+   values[0] = orientationZ;
    values[1] = positionX;
    values[2] = positionY;
    values[3] = relTravelledPath;
    values[4] = absTravelledPath;
    values[5] = velocityX;
    values[6] = velocityY;
-   return values;
+
 }

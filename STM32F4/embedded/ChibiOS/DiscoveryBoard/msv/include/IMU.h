@@ -30,8 +30,7 @@ Byte 10: acc Y
 Byte 11: acc Z
 */
 //static int razorDataExample[12]; // This should be the data from the Razor interface.
-static float values [7];
-//static Mutex razorDataMutex; // The data from the Razor interface must be protected whenever the IMU is accessing it. This mutex should be in the Razor interface definition.
+static Mutex razorDataMutex; // The data from the Razor interface must be protected whenever the IMU is accessing it. This mutex should be in the Razor interface definition.
 
 static float orientationX; // Output of the filtered orientation around X-axis in degree.
 static float orientationY; // Output of the filtered orientation around Y-axis in degree.
@@ -76,6 +75,6 @@ void calculateOrientation(const int *razorDataPtr);
  */
 void updatePosition(const int *speedPtr);
 
-float* getImuValues(void);
+void getImuValues(float values[7]);
 
 #endif // IMU_H_INCLUDED

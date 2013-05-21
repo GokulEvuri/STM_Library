@@ -106,10 +106,10 @@ uint32_t accelerometer_discovery(int8_t discoveryData[2]){
     return encoded;
   }
   
-  if(discoveryData[9] < 0){
+  if(discoveryData[0] < 0){
     encoded |= 0x0100;
   }
-  if(discoveryData[10] < 0){
+  if(discoveryData[1] < 0){
     encoded |= 0x0100 << 9;
   }
   

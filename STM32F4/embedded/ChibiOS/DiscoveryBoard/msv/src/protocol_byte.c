@@ -149,7 +149,7 @@ uint32_t infrared(int ir1, int ir2, int ir3){
 uint32_t currentPos(float imuInfo[7]){
   uint32_t encoded = 0;
 
-  if(imuInfo[1] < -2500 || imuInfo[1] > 2500 || imuInfo[2] < -2500 || imuInfo[2] > 2500){
+  if(imuInfo[1] < -25 || imuInfo[1] > 25 || imuInfo[2] < -25 || imuInfo[2] > 25){
     encoded |= 0x1000;
     return encoded;
   }

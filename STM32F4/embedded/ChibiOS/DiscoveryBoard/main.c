@@ -33,17 +33,31 @@ const SerialConfig portConfig2 = {
 int main(void) {
   int8_t accelData[2];     // Discovery Board's Accelerometer
   uint8_t receivedBuff[2]; // Received request/information from PandaBoard
-  uint8_t sentData[4];     // Returned Information (reply) to the PandaBoard
+  uint8_t sentData[4] = {0,0,0,0};     // Returned Information (reply) to the PandaBoard
   float imuData[7];        // IMU calculated data based on Razor Boad
   int* razorInfo;          // Razor Board Data
+  int steering = 0;
+
+  /*razorInfo[0] = 0;
+  razorInfo[1] = 1;
+  razorInfo[2] = 2;
+  razorInfo[3] = 3;
+  razorInfo[4] = 4;
+  razorInfo[5] = 5;
+  razorInfo[6] = 6;
+  razorInfo[7] = 7;
+  razorInfo[8] = 8;
+  razorInfo[9] = 9;
+  razorInfo[10] = 10;
+  razorInfo[11] = 11;
   
-  /*imuData[0] = 1;
-    imuData[1] = 2;
-    imuData[2] = 3;
+  imuData[0] = 0;
+    imuData[1] = 1;
+    imuData[2] = 2;
     imuData[3] = 1;
-    imuData[4] = 1000;
-    imuData[5] = 4;
-    imuData[6] = 5;*/
+    imuData[4] = 4;
+    imuData[5] = 5;
+    imuData[6] = 6;*/
 
   /*
    * System initializations.
@@ -53,14 +67,16 @@ int main(void) {
    *   RTOS is active.
    */
   halInit();
-  chSysInit();
-  /*
-  motorInit(); 
+  chSysInit(); 
+  
   mypwmInit();
-  myADCinit();*/
+  motorInit();
+/*  
+  myADCinit();
+*/
   
   // Initializing Discovery Board's Accelerometer
-  // mySPIinit();
+  //mySPIinit();
 
   // Initializing Razor Board
   myRazorInit();
@@ -71,6 +87,10 @@ int main(void) {
   // Initializing IMU Calculations.
   initIMU();
 
+  // Initializing Motor
+
+
+ 
   //Starting the usb configuration
   sdStart(&SDU1,&portConfig2);
  
@@ -78,21 +98,33 @@ int main(void) {
    * Main loop, it takes care of reciving the requests from Panda Board using USB protocol,
    * and reply with the requested data.
    */
-
   while (TRUE) {
     sdRead(&SDU1, receivedBuff, 4);
-    uint16_t receivedByte = (uint16_t)atol(receivedBuff);
- 
-    razorInfo = getRazorValues();
-    getImuValues(imuData);
-    getAccel(accelData);
+   // uint16_t receivedByte = receivedBuff[1] | receivedBuff[0] << 8;
+    uint16_t receivedByte = (uint16_t ) atoi(receivedBuff);
+    //  razorInfo = getRazorValues();
+    //   getImuValues(imuData);
+    //   getAccel(accelData);
     
-    //setMotorData((receivedByte >> 4) & 0x3F,(receivedByte >> 4) & 0x3F);
-
-    translate(receivedByte,razorInfo,imuData,accelData,sentData);
-    sdWrite(&SDU1, sentData, 4);
-    
+    //setMotorData((receivedByte >> 10) & 0x3F,(receivedByte >> 4) & 0x3F); 
+    if(receivedByte != 0){
+       steering = receivedByte >> 10;
+       setMotorData(steering-28,1490);
+    }
+   /* if((receivedByte & 0xF) == 1){
+       steering = -28;
+       setMotorData(steering,1490);
+    }
+    if((receivedByte & 0xF) == 6){
+       steering = 28;
+       setMotorData(steering,1550);
+    }*/
    
+    /*if(receivedByte != 0){
+       translate(receivedByte,razorInfo,imuData,accelData,sentData);
+       sdWrite(&SDU1, sentData, 4);
+    }*/
+    
     //Controlled Delay
     chThdSleepMilliseconds(10);
   }

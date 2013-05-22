@@ -3,5 +3,7 @@
 
 void motorInit(void);
 void setMotorData(int steer, int speed);
+int convertMotorData(int speed);
+int convertSteeringData(int steer);
 
 #endif // MOTORINCLUDED

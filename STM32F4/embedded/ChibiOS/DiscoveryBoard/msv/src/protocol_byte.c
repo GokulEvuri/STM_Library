@@ -170,10 +170,6 @@ uint32_t currentPos(float imuInfo[7]){
 uint32_t traveled_path(float imuInfo[7]){
   uint32_t encoded = 0;
   
-   if(imuInfo[1] < -25 || imuInfo[1] > 25 || imuInfo[2] < -25 || imuInfo[2] > 25){
-    encoded |= 0x1000;
-    return encoded;
-  }
   encoded |= (int)((imuInfo[3]/2)*100);
   encoded |= (int)((imuInfo[4]/2)*100) << 6;
  
@@ -209,7 +205,7 @@ uint32_t current_orientation(float imuInfo[7]){
   return encoded;
 }
 
-void translate(uint32_t receive, int razorData[12], float imuInfo[7], int8_t discoveryAccelData[2], uint8_t data[4]){ 
+void translate(uint32_t receive, int ir_data[3], int razorData[12], float imuInfo[7], int8_t discoveryAccelData[2], uint8_t data[4]){ 
   uint16_t request;
   uint32_t package = 0;
  
@@ -218,7 +214,7 @@ void translate(uint32_t receive, int razorData[12], float imuInfo[7], int8_t dis
   
   switch(request){
   case 1:
-    package |= infrared(31,31,31) << 4;
+    package |= infrared(ir_data[0],ir_data[1],ir_data[2]) << 4;
     break;
   case 2:
     package |= ultrasonic(630) << 4;

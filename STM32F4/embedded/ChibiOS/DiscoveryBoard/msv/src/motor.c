@@ -27,7 +27,6 @@ static PWMConfig pwmcfg = {
 // Thread for controlling motor
 static WORKING_AREA(waThread3, 128);
 static msg_t Thread3(void *arg) {
-//  chThdSleepMilliseconds(5000);  
   (void)arg;
 
   chRegSetThreadName("motorThread");
@@ -42,7 +41,6 @@ static msg_t Thread3(void *arg) {
 // Thread for steering motor
 static WORKING_AREA(waThread4, 128);
 static msg_t Thread4(void *arg) {
-  //chThdSleepMilliseconds(5000);
   (void)arg;
 
   chRegSetThreadName("steeringThread");
@@ -81,11 +79,10 @@ void motorInit(void) {
 void setMotorData(int steer, int speed){
 
   // steeringMotor = steer;
-  steeringMotor = 1450 + (steer * 11.75);
+  steeringMotor = 1500 + (steer * 11.75);
 
   //call method to convert
-   speedMotor = speed;//convertMotorData(speed);
- //  speedMotor = speed;  		
+   speedMotor = speed;//convertMotorData(speed);	
 }
 //method for translating the data to pulse for moving the engine
 

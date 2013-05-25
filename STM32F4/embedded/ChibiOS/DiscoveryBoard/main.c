@@ -10,7 +10,6 @@
 #include "chprintf.h"
 
 #include "PWM/PWM.h"
-#include "ADC/ADC.h"
 #include "USB/USB.h"
 #include "Misc/Misc.h"
 #include "SPI/SPI.h"
@@ -19,6 +18,7 @@
 #include "msv/include/motor.h"
 #include "msv/include/ultrasonic.h"
 #include "msv/include/IMU.h"
+#include "msv/include/ir.h"
 
 
 const SerialConfig portConfig2 = {
@@ -38,6 +38,7 @@ int main(void) {
   float imuData[7];        // IMU calculated data based on Razor Boad
   int* razorInfo;          // Razor Board Data
   int steering = 0;
+  int ir_data[3]; 
 
   /*
    * System initializations.
@@ -52,7 +53,13 @@ int main(void) {
   mypwmInit();
    
  // Initializing Motor
-  motorInit();
+ // motorInit();
+
+  // Initializing IR Thread
+ // ADCinit();
+
+  // Initializing US Thread
+//  myUltrasonicInit();
   
   // Initializing Discovery Board's Accelerometer
   //mySPIinit();
@@ -66,12 +73,8 @@ int main(void) {
   // Initializing IMU Calculations.
   initIMU();
 
-
-
-
- 
   //Starting the usb configuration
-    sdStart(&SDU1,&portConfig2);
+  sdStart(&SDU1,&portConfig2);
  
   /*
    * Main loop, it takes care of reciving the requests from Panda Board using USB protocol,
@@ -79,18 +82,18 @@ int main(void) {
    */
   while (TRUE) {
     sdRead(&SDU1, receivedBuff, 4);
-
     uint32_t receivedByte = (uint32_t)atol(receivedBuff);
 
-    //  razorInfo = getRazorValues();
-    //   getImuValues(imuData);
+    razorInfo = getRazorValues();
+    getImuValues(imuData);
     //   getAccel(accelData);
+    getIR(ir_data);
 
     if(receivedByte != 0){
        steering = ((receivedByte)>>2)&0x3F;
-       setMotorData(steering-28,1550);
+       setMotorData(steering-28,1765);
 
-       translate(receivedByte,razorInfo,imuData,accelData,sentData);
+       translate(receivedByte,ir_data,razorInfo,imuData,accelData,sentData);
        sdWrite(&SDU1, sentData, 4);
     }
 

@@ -14,6 +14,6 @@ uint32_t currentPos(float imuInfo[7]);
 uint32_t traveled_path(float imuInfo[7]);
 uint32_t current_velocity(float imuInfo[7]);
 uint32_t current_orientation(float imuInfo[7]);
-void translate(uint32_t receive, int razorData[12], float imuInfo[7], int8_t discoveryAccelData[2], uint8_t data[4]);
+void translate(uint32_t receive, int ir_data[3], int razorData[12], float imuInfo[7], int8_t discoveryAccelData[2], uint8_t data[4]);
 
 #endif

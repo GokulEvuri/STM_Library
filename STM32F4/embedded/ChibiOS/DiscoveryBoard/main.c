@@ -20,6 +20,7 @@
 #include "msv/include/IMU.h"
 #include "msv/include/ir.h"
 
+int rcvData[8]={0,0,0,0,0,0,0,0}; 
 
 const SerialConfig portConfig2 = {
     115000,
@@ -28,17 +29,42 @@ const SerialConfig portConfig2 = {
     USART_CR3_CTSE
 };
 
+void parse(char *str) {
+    char tmp[4][3];
+    int len =strlen(str);
+    int x=0,y=0,i=0,j=0;
+    //delete all in temp
+    for (i=0;i<4;i++)
+	for (j=0;j<3;j++)
+	   tmp[i][j]=' ';
+	//pharse to array of string
+    for (i=0;i<len;i++)
+    {
+       if (str[i]!=',')tmp[x][y]=str[i];
+       y++;	  
+       if (str[i]==','){
+          tmp[x][y]='\0';
+          x++;
+          y=0; 
+       }
+    }
+    //convert small string to array
+    for (i=0;i<4;i++) rcvData[i]=atoi (tmp[i]);
+}
+
 /*
 * Application entry point.
 */
 int main(void) {
-  int8_t accelData[2];     // Discovery Board's Accelerometer
-  uint8_t receivedBuff[4];// Received request/information from PandaBoard
-  uint8_t sentData[4] = {0,0,0,0};     // Returned Information (reply) to the PandaBoard
-  float imuData[7];        // IMU calculated data based on Razor Boad
-  int* razorInfo;          // Razor Board Data
+  int8_t accelData[2]={0,0};     	   // Discovery Board's Accelerometer
+  uint8_t receivedBuff[4]={0,0,0,0}; 	   // Received request/information from PandaBoard
+  uint8_t sentData[4] = {0,0,0,0}; // Returned Information (reply) to the PandaBoard
+  float imuData[7]={0,0,0,0,0,0,0};        	   // IMU calculated data based on Razor Boad
+  int* razorInfo;                  // Razor Board Data
   int steering = 0;
-  int ir_data[3]; 
+  int speed = 0;
+  int ir_data[3]={0,0,0}; 
+  int16_t us_data[3]={0,0,0};
 
   /*
    * System initializations.
@@ -53,13 +79,13 @@ int main(void) {
   mypwmInit();
    
  // Initializing Motor
- // motorInit();
+  motorInit();
 
   // Initializing IR Thread
- // ADCinit();
+  ADCinit();
 
   // Initializing US Thread
-//  myUltrasonicInit();
+ // myUltrasonicInit();
   
   // Initializing Discovery Board's Accelerometer
   //mySPIinit();
@@ -70,7 +96,7 @@ int main(void) {
   // Activates the USB driver and then the USB bus pull-up on D+.
   myUSBinit();
 
-  // Initializing IMU Calculations.
+  // Initializing IMU Calculations. 
   initIMU();
 
   //Starting the usb configuration
@@ -81,23 +107,22 @@ int main(void) {
    * and reply with the requested data.
    */
   while (TRUE) {
-    sdRead(&SDU1, receivedBuff, 4);
-    uint32_t receivedByte = (uint32_t)atol(receivedBuff);
+   char receivedInfo[8];
+   sdRead(&SDU1, receivedInfo, 7);
+   
+  // getImuValues(imuData);
+   //   getAccel(accelData);
+  // getIR(ir_data);  
+   //  getUS(us_data);
 
-    razorInfo = getRazorValues();
-    getImuValues(imuData);
-    //   getAccel(accelData);
-    getIR(ir_data);
-
-    if(receivedByte != 0){
-       steering = ((receivedByte)>>2)&0x3F;
-       setMotorData(steering-28,1765);
-
-       translate(receivedByte,ir_data,razorInfo,imuData,accelData,sentData);
-       sdWrite(&SDU1, sentData, 4);
+   if(receivedInfo != 0){
+	receivedInfo[8]='\0';
+	parse(receivedInfo);
+      
+	setMotorData(-(rcvData[1]-28),rcvData[2]-2);
+	translate(rcvData[0],ir_data,us_data,razorInfo,imuData,accelData,sentData);
+       	sdWrite(&SDU1, sentData, 4);
+	chThdSleepMilliseconds(10);
     }
-
-    //Controlled Delay
-    chThdSleepMilliseconds(10);
-  }
+  }   
 }

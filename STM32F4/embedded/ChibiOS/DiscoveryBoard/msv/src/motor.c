@@ -3,7 +3,9 @@
 #include "hal.h"
 #include "msv/include/motor.h"
 
-int steeringMotor = 1500; //1265 mapping require 
+#define defaultSteering 1450 
+
+int steeringMotor; //1265 mapping require 
 int speedMotor; // min 1490 max over 2000 for forward movement.
 int drive_pulse = 1400; //initalizing width of the pulse
 
@@ -32,7 +34,7 @@ static msg_t Thread3(void *arg) {
   chRegSetThreadName("motorThread");
 
   while (TRUE) {
-    pwmEnableChannel(&PWMD4, 2, speedMotor);
+    pwmEnableChannel(&PWMD3, 2, speedMotor);
     chThdSleepMilliseconds(10);  
   }
   return (msg_t)0;
@@ -46,27 +48,24 @@ static msg_t Thread4(void *arg) {
   chRegSetThreadName("steeringThread");
 
   while (TRUE) {
-    pwmEnableChannel(&PWMD4, 3, steeringMotor);
+    pwmEnableChannel(&PWMD3, 3, steeringMotor);
     chThdSleepMilliseconds(10);
   }
   return (msg_t)0;
 }
 
 void motorInit(void) {
-  //steeringMotor = 1100;
-  //speedMotor = 1500;
 	//Pin selection PC8 PC9	
-  palSetPadMode(GPIOB, 8, PAL_MODE_ALTERNATE(2));
-  palSetPadMode(GPIOB, 9, PAL_MODE_ALTERNATE(2));//650
-
+  palSetPadMode(GPIOC, 8, PAL_MODE_ALTERNATE(2));
+  palSetPadMode(GPIOC, 9, PAL_MODE_ALTERNATE(2));//650
 
   // hardware confg
-  pwmStart(&PWMD4, &pwmcfg);
+  pwmStart(&PWMD3, &pwmcfg);
   //drive motor enable
-  pwmEnableChannel(&PWMD4, 2, drive_pulse);
-  pwmEnableChannel(&PWMD4, 3, drive_pulse);
+  pwmEnableChannel(&PWMD3, 2, drive_pulse);
+  pwmEnableChannel(&PWMD3, 3, defaultSteering);
   //wait until it enables drive motor
-  chThdSleepMilliseconds(500);
+  chThdSleepMilliseconds(100);
   //start threed
 
   
@@ -79,7 +78,7 @@ void motorInit(void) {
 void setMotorData(int steer, int speed){
 
   // steeringMotor = steer;
-  steeringMotor = 1500 + (steer * 11.75);
+  steeringMotor = defaultSteering + (steer * 11.75);
 
   //call method to convert
    speedMotor = speed;//convertMotorData(speed);	

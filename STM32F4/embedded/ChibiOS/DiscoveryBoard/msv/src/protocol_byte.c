@@ -205,11 +205,8 @@ uint32_t current_orientation(float imuInfo[7]){
   return encoded;
 }
 
-void translate(uint32_t receive, int ir_data[3], int razorData[12], float imuInfo[7], int8_t discoveryAccelData[2], uint8_t data[4]){ 
-  uint16_t request;
+void translate(int request, int ir_data[3], int16_t us_data[3],int razorData[12], float imuInfo[7], int8_t discoveryAccelData[2], uint8_t data[4]){ 
   uint32_t package = 0;
- 
-  request = (receive>>8 )&0xF;
   package |= request;
   
   switch(request){
@@ -217,9 +214,9 @@ void translate(uint32_t receive, int ir_data[3], int razorData[12], float imuInf
     package |= infrared(ir_data[0],ir_data[1],ir_data[2]) << 4;
     break;
   case 2:
-    package |= ultrasonic(630) << 4;
-    package |= ultrasonic(630) << 12;
-    package |= ultrasonic(630) << 20;
+    package |= ultrasonic(us_data[0]) << 4;
+    package |= ultrasonic(us_data[1]) << 12;
+    package |= ultrasonic(us_data[2]) << 20;
     break;
   case 3: 
     package |= yaw(razorData) << 4;

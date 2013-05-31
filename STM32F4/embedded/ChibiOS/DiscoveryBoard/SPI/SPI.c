@@ -84,20 +84,20 @@ static msg_t Thread1(void *arg) {
     chMtxLock(&accelMtx);
     // Reprogramming the four PWM channels using the accelerometer data.
     if (accel_y[4] < 0) {
-      pwmEnableChannel(&PWMD4, 0, (pwmcnt_t)-accel_y[4]);
-      pwmEnableChannel(&PWMD4, 2, (pwmcnt_t)0);
+      pwmEnableChannel(&PWMD3, 0, (pwmcnt_t)-accel_y[4]);
+      pwmEnableChannel(&PWMD3, 2, (pwmcnt_t)0);
     }
     else {
-      pwmEnableChannel(&PWMD4, 2, (pwmcnt_t)accel_y[4]);
-      pwmEnableChannel(&PWMD4, 0, (pwmcnt_t)0);
+      pwmEnableChannel(&PWMD3, 2, (pwmcnt_t)accel_y[4]);
+      pwmEnableChannel(&PWMD3, 0, (pwmcnt_t)0);
     }
     if (accel_x[4] < 0) {
-      pwmEnableChannel(&PWMD4, 1, (pwmcnt_t)-accel_x[4]);
-      pwmEnableChannel(&PWMD4, 3, (pwmcnt_t)0);
+      pwmEnableChannel(&PWMD3, 1, (pwmcnt_t)-accel_x[4]);
+      pwmEnableChannel(&PWMD3, 3, (pwmcnt_t)0);
     }
     else {
-      pwmEnableChannel(&PWMD4, 3, (pwmcnt_t)accel_x[4]);
-      pwmEnableChannel(&PWMD4, 1, (pwmcnt_t)0);
+      pwmEnableChannel(&PWMD3, 3, (pwmcnt_t)accel_x[4]);
+      pwmEnableChannel(&PWMD3, 1, (pwmcnt_t)0);
     }
     chMtxUnlock();
 

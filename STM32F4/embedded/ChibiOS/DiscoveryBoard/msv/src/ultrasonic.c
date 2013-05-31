@@ -1,11 +1,8 @@
 /*
  * 
-Ziyu Liu: 1. reduce measurement cycle from 450ms (half a second) to 69ms 
-          2. querying each sensor 32 times per cycle
-          3. add a fuction to read light instensity from sensor
-          4. add a fuction to set the max gain Registers. (defult 31, max 36)
+Ziyu Liu: Integrated vision. bug fixed
 
-V1.01  Ultrasonic Integrated 
+V1.02  Ultrasonic Integrated 
  
 You need to change the I2C address of SRF08 before testing the code. To change the I2C address of the SRF08 you must have only one sonar on the bus. Then you can use changeAddress(uint8_t current, uint8_t moveto) to change address. Plz use 0xE2(ultrasonic1) 0xE4(ultrasonic2) 0xE6(ultrasonic3) as your new address. This change will be permanent. 
  */
@@ -31,14 +28,14 @@ You need to change the I2C address of SRF08 before testing the code. To change t
 #define SRF08_addr_2 0b1110010 //0xE4
 #define SRF08_addr_3 0b1110011 //oxE6
 #define SRF08_TX_DEPTH 6
-#define SRF08_RX_DEPTH 28
+#define SRF08_RX_DEPTH 2
 #define SRF08_RG_DEPTH 3
 
 
 msg_t status = RDY_OK;
 systime_t tmo = MS2ST(20);
 static int16_t range[SRF08_RG_DEPTH];
-static int16_t lightInstensity[SRF08_RG_DEPTH];
+static int8_t lightInstensity[SRF08_RG_DEPTH];
 
 
 /* I2C interface  */
@@ -168,17 +165,14 @@ void sendData(uint8_t SRF08_addr){
  */
 
 void receiveRange(uint8_t SRF08_addr, uint8_t count){
-   uint8_t txbuf[SRF08_TX_DEPTH];
-   uint8_t rxbuf[SRF08_RX_DEPTH];
-   uint16_t i =0;
-   txbuf[0] = 0x02; //read data from location 2
+  uint8_t txbuf[SRF08_TX_DEPTH];
+  uint8_t rxbuf[SRF08_RX_DEPTH];
+  //uint16_t i =0;
+  //uint16_t j =0;
+   txbuf[0] = 0x02 ;
    i2cAcquireBus(&I2CD1);
-   status=i2cMasterTransmitTimeout(&I2CD1, SRF08_addr, txbuf, 1, rxbuf, 28, tmo);
-   while(i < sizeof(rxbuf))
-   {
-   range[count] = complement2signed(rxbuf[i], rxbuf[i+1]);
-   i++;
-   }
+   status=i2cMasterTransmitTimeout(&I2CD1, SRF08_addr, txbuf, 1, rxbuf, 2 , tmo);
+   range[count] = complement2signed(rxbuf[0], rxbuf[1]);
    i2cReleaseBus(&I2CD1);
 }
 
@@ -203,16 +197,16 @@ void receiveLightIntensity(uint8_t SRF08_addr, uint8_t count){
 }
 
 
-static WORKING_AREA(waThread2, 128);
+static WORKING_AREA(myThreadWorkingArea, 128);
 static msg_t Thread2(void *arg) {
   
   (void)arg;
   chRegSetThreadName("ultrasonic");
-
+  systime_t time = chTimeNow(); 
 //loop for get range.
     
             while (TRUE) {
-
+               time += MS2ST(100);   //use a timer to solve the thread conflict issue  
 
                 sendData(SRF08_addr_1);     //Trigger measurement for US1
 
@@ -226,19 +220,21 @@ static msg_t Thread2(void *arg) {
 
                 chThdSleepMilliseconds(65); //wait 65ms
                 
-                //receiveLightIntensity(SRF08_addr_1, 0) //receive Light Intensity
+                receiveLightIntensity(SRF08_addr_1, 0);//receive Light Intensity
 
                 receiveRange(SRF08_addr_1,0);//read measurement from US1
 
-                chThdSleepMilliseconds(1);  //wait 1ms 
+                chThdSleepMilliseconds(5);  //wait 1ms 
       
                 receiveRange(SRF08_addr_2,1);//read measurement from US2
                 
-                //receiveLightIntensity(SRF08_addr_2, 1) //receive Light Intensity
+                //receiveLightIntensity(SRF08_addr_2, 1); //receive Light Intensity
 
-                chThdSleepMilliseconds(1);   //wait 1ms 
+                chThdSleepMilliseconds(5);   //wait 1ms 
 
                 receiveRange(SRF08_addr_3,2); //read measurement from US3
+                
+                chThdSleepUntil(time);   //Suspends the invoking thread until the system time arrives to the specified value
                 
                 //receiveLightIntensity(SRF08_addr_1, 2) //receive Light Intensity
             }
@@ -277,8 +273,14 @@ void myUltrasonicInit(void) {
  //changeAddress(SRF08_addr_1,0xE2);
  //setRange(SRF08_addr_1,0xFF)
  //setMaxGainRegister(SRF08_addr_1, 0x24)
- chThdCreateStatic(waThread2, sizeof(waThread2),
+ chThdCreateStatic(myThreadWorkingArea, sizeof(myThreadWorkingArea),
                     NORMALPRIO + 10, Thread2, NULL);
+ /* Thread *tp = chThdCreateFromHeap(NULL, THD_WA_SIZE(128), NORMALPRIO+1,
+                                 Thread2, NULL); */
+ // if (tp == NULL)
+   // chSysHalt();    /* Memory exausted. */
+
+ // msg_t msg = chThdWait(tp);
 }
 
 
@@ -289,6 +291,11 @@ int16_t getLightInstensity(int SRF_num) {
 }
 
 int16_t getRange(int SRF_num) {
-  
 	return range[SRF_num-1];
+}
+
+void getUS(int16_t *usData){
+    usData[0] = getRange(1);
+    usData[1] = getRange(2);
+    usData[2] = getRange(3);
 }

@@ -3,7 +3,7 @@
 #include "hal.h"
 #include "msv/include/motor.h"
 
-#define defaultSteering 1450 
+#define defaultSteering 1500 
 
 int steeringMotor; //1265 mapping require 
 int speedMotor; // min 1490 max over 2000 for forward movement.

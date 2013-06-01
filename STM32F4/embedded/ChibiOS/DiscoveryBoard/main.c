@@ -20,7 +20,7 @@
 #include "msv/include/IMU.h"
 #include "msv/include/ir.h"
 
-int rcvData[8]={0,0,0,0,0,0,0,0}; 
+int rcvData[3]={0,0,0}; 
 
 const SerialConfig portConfig2 = {
     115000,
@@ -30,26 +30,26 @@ const SerialConfig portConfig2 = {
 };
 
 void parse(char *str) {
-    char tmp[4][3];
-    int len =strlen(str);
-    int x=0,y=0,i=0,j=0;
-    //delete all in temp
-    for (i=0;i<4;i++)
-	for (j=0;j<3;j++)
-	   tmp[i][j]=' ';
-	//pharse to array of string
-    for (i=0;i<len;i++)
-    {
-       if (str[i]!=',')tmp[x][y]=str[i];
-       y++;	  
-       if (str[i]==','){
-          tmp[x][y]='\0';
-          x++;
-          y=0; 
-       }
+  char tmp[4][4];
+  int len =strlen(str);
+  int x=0,y=0,i=0,j=0;
+  //delete all in temp
+  for (i=0;i<4;i++)
+      for (j=0;j<4;j++)
+          tmp[i][j]=' ';
+  //pharse to array of string
+  for (i=0;i<len;i++)
+  {
+    if (str[i]!=',')tmp[x][y]=str[i];
+    y++;	  
+    if (str[i]==','){
+        tmp[x][y]='\0';
+        x++;
+	y=0; 
     }
-    //convert small string to array
-    for (i=0;i<4;i++) rcvData[i]=atoi (tmp[i]);
+  }
+  //convert small string to array
+  for (i=0;i<4;i++) rcvData[i]=atoi (tmp[i]);
 }
 
 /*
@@ -101,28 +101,29 @@ int main(void) {
 
   //Starting the usb configuration
   sdStart(&SDU1,&portConfig2);
+  char receivedInfo[11];
  
   /*
    * Main loop, it takes care of reciving the requests from Panda Board using USB protocol,
    * and reply with the requested data.
    */
   while (TRUE) {
-   char receivedInfo[8];
-   sdRead(&SDU1, receivedInfo, 7);
+   receivedInfo[0]='T';
+   sdRead(&SDU1, receivedInfo, 10);
    
   // getImuValues(imuData);
    //   getAccel(accelData);
   // getIR(ir_data);  
    //  getUS(us_data);
 
-   if(receivedInfo != 0){
-	receivedInfo[8]='\0';
+   if(receivedInfo[0] != 'T'){
+	receivedInfo[11]='\0';
 	parse(receivedInfo);
       
-	setMotorData(-(rcvData[1]-28),rcvData[2]-2);
+	//setMotorData(-(rcvData[1]-28),rcvData[2]-2);
+        setMotorData(rcvData[1],1550);
 	translate(rcvData[0],ir_data,us_data,razorInfo,imuData,accelData,sentData);
        	sdWrite(&SDU1, sentData, 4);
-	chThdSleepMilliseconds(10);
     }
   }   
 }
